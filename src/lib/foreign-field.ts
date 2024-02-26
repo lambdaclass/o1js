@@ -413,8 +413,11 @@ function createForeignField(modulus: bigint, { unsafe = false } = {}) {
   }
 
   function toFp(x: bigint | string | number | ForeignField) {
-    if (x instanceof ForeignField) return x.toBigInt();
-    return mod(BigInt(x), p);
+    let type = typeof x;
+    if (type === 'bigint' || type === 'number' || type === 'string') {
+        return mod(BigInt(x as bigint | string | number), p);
+    }
+    return (x as ForeignField).toBigInt();
   }
   function toVar(x: bigint | number | string | ForeignField): ForeignFieldVar {
     if (x instanceof ForeignField) return x.value;
