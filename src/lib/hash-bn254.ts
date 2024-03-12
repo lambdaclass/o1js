@@ -34,15 +34,15 @@ class Sponge {
 
   constructor() {
     let isChecked = ProvableBn254.inCheckedComputation();
-    this.#sponge = Snarky.poseidon.sponge.create(isChecked);
+    this.#sponge = Snarky.bn254.poseidon.sponge.create(isChecked);
   }
 
   absorb(x: FieldBn254) {
-    Snarky.poseidon.sponge.absorb(this.#sponge, x.value);
+    Snarky.bn254.poseidon.sponge.absorb(this.#sponge, x.value);
   }
 
   squeeze(): FieldBn254 {
-    return FieldBn254(Snarky.poseidon.sponge.squeeze(this.#sponge));
+    return FieldBn254(Snarky.bn254.poseidon.sponge.squeeze(this.#sponge));
   }
 }
 
@@ -60,7 +60,7 @@ const Poseidon = {
       return TupleN.fromArray(3, newState.map(FieldBn254));
     }
 
-    let newState = Snarky.poseidon.update(
+    let newState = Snarky.bn254.poseidon.update(
       MlFieldArray.to(state),
       MlFieldArray.to(input)
     );
