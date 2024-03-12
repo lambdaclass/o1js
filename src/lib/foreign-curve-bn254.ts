@@ -3,7 +3,6 @@ import {
   CurveAffine,
   createCurveAffine,
 } from '../bindings/crypto/elliptic-curve.js';
-import { ProvablePureExtended } from './circuit-value.js';
 import { AlmostForeignFieldBn254, ForeignFieldBn254, createForeignFieldBn254 } from './foreign-field-bn254.js';
 import { EllipticCurveBn254, PointBn254 } from './gadgets/elliptic-curve-bn254.js';
 import { Field3 } from './gadgets/foreign-field-bn254.js';
@@ -11,6 +10,7 @@ import { assert } from './gadgets/common-bn254.js';
 import { ProvableBn254 } from './provable-bn254.js';
 import { provableFromClass } from '../bindings/lib/provable-snarky.js';
 import { FieldConst, FieldVar } from './field-bn254.js';
+import { ProvablePureExtendedBn254 } from './circuit-value-bn254.js';
 
 // external API
 export { createForeignCurveBn254, ForeignCurveBn254 };
@@ -293,7 +293,7 @@ class ForeignCurveBn254 {
   static _Bigint?: CurveAffine;
   static _Field?: typeof AlmostForeignFieldBn254;
   static _Scalar?: typeof AlmostForeignFieldBn254;
-  static _provable?: ProvablePureExtended<
+  static _provable?: ProvablePureExtendedBn254<
     ForeignCurveBn254,
     { x: string; y: string }
   >;
