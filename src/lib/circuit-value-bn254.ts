@@ -540,7 +540,7 @@ class Unconstrained<T> {
    * Note: Can only be called outside provable code.
    */
   get(): T {
-    if (inCheckedComputation() && !Snarky.run.inProverBlock())
+    if (inCheckedComputation() && !Snarky.bn254.run.inProverBlock())
       throw Error(`You cannot use Unconstrained.get() in provable code.
 
 The only place where you can read unconstrained values is in ProvableBn254.witness()

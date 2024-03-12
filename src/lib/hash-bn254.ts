@@ -89,6 +89,7 @@ const Poseidon = {
       };
     }
 
+    // TODO: This is not used for the verifier circuit 
     // y = sqrt(y^2)
     let [, xv, yv] = Snarky.poseidon.hashToGroup(MlFieldArray.to(input));
 
