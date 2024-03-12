@@ -6,9 +6,9 @@ import {
 } from '../circuit-value-bn254.js';
 import { FieldBn254 } from '../field-bn254.js';
 import { assert } from '../gadgets/common-bn254.js';
-import { Poseidon, ProvableHashable, packToFields } from '../hash.js';
-import { Provable } from '../provable.js';
-import { fields, modifiedField } from './fields.js';
+import { Poseidon, ProvableHashable, packToFields } from '../hash-bn254.js';
+import { ProvableBn254 } from '../provable-bn254.js';
+import { fields, modifiedField } from './fields-bn254.js';
 
 export { Packed, Hashed };
 
@@ -23,7 +23,7 @@ export { Packed, Hashed };
  * Using a packed representation can make sense in provable code where the number of constraints
  * depends on the number of field elements per value.
  *
- * For example, `Provable.if(bool, x, y)` takes O(n) constraints, where n is the number of field
+ * For example, `ProvableBn254.if(bool, x, y)` takes O(n) constraints, where n is the number of field
  * elements in x and y.
  *
  * Usage:
@@ -90,7 +90,7 @@ class Packed<T> {
     let input = type.toInput(x);
     let packed = packToFields(input);
     let unconstrained = Unconstrained.witness(() =>
-      Provable.toConstant(type, x)
+      ProvableBn254.toConstant(type, x)
     );
     return new this(packed, unconstrained);
   }
@@ -99,7 +99,7 @@ class Packed<T> {
    * Unpack a value.
    */
   unpack(): T {
-    let value = Provable.witness(this.Constructor.innerProvable, () =>
+    let value = ProvableBn254.witness(this.Constructor.innerProvable, () =>
       this.value.get()
     );
 
@@ -153,7 +153,7 @@ function countFields(input: HashInput) {
  * Since a hash is only a single field element, this can be more efficient in provable code
  * where the number of constraints depends on the number of field elements per value.
  *
- * For example, `Provable.if(bool, x, y)` takes O(n) constraints, where n is the number of field
+ * For example, `ProvableBn254.if(bool, x, y)` takes O(n) constraints, where n is the number of field
  * elements in x and y. With Hashed, this is reduced to O(1).
  *
  * The downside is that you will pay the overhead of hashing your values, so it helps to experiment
@@ -232,7 +232,7 @@ class Hashed<T> {
   static hash<T>(value: T, hash?: FieldBn254): Hashed<T> {
     hash ??= this._hash(value);
     let unconstrained = Unconstrained.witness(() =>
-      Provable.toConstant(this.innerProvable, value)
+      ProvableBn254.toConstant(this.innerProvable, value)
     );
     return new this(hash, unconstrained);
   }
@@ -241,7 +241,7 @@ class Hashed<T> {
    * Unwrap a value from its hashed variant.
    */
   unhash(): T {
-    let value = Provable.witness(this.Constructor.innerProvable, () =>
+    let value = ProvableBn254.witness(this.Constructor.innerProvable, () =>
       this.value.get()
     );
 

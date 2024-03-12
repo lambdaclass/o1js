@@ -4,7 +4,7 @@ import { FieldBn254 } from './core-bn254.js';
 import { createHashHelpers } from './hash-generic.js';
 import { ProvableBn254 } from './provable-bn254.js';
 import { MlFieldArray } from './ml/fields-bn254.js';
-import { Poseidon as PoseidonBigint } from '../bindings/crypto/poseidon.js';
+import { PoseidonBn254 as PoseidonBigint } from '../bindings/crypto/poseidon.js';
 import { assert } from './errors.js';
 import { rangeCheckN } from './gadgets/range-check-bn254.js';
 import { TupleN } from './util/types.js';
