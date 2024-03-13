@@ -887,7 +887,7 @@ declare const Snarky: {
         publicInputSize: number,
         publicInput: MlArray<FieldConst>,
         keypair: Snarky.Bn254.Keypair
-      ): Snarky.Bn254.Proof;
+      ): string;
 
       /**
        * Verifies a proof using the public input, the proof and the verification key of the circuit.
