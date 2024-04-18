@@ -10,6 +10,7 @@ export {
 export { createForeignCurve, ForeignCurve } from './lib/foreign-curve.js';
 export { createEcdsa, EcdsaSignature } from './lib/foreign-ecdsa.js';
 export { Poseidon, TokenSymbol, ProvableHashable } from './lib/hash.js';
+export { Poseidon as PoseidonBn254 } from './lib/hash-bn254.js';
 export { Keccak } from './lib/keccak.js';
 export { Hash } from './lib/hashes-combined.js';
 
