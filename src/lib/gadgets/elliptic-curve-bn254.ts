@@ -17,9 +17,9 @@ import {
 import { BoolBn254 } from '../bool-bn254.js';
 import { provable } from '../circuit-value-bn254.js';
 import { assertPositiveInteger } from '../../bindings/crypto/non-negative.js';
-import { arrayGet, assertBoolean } from './basic.js';
-import { sliceField3 } from './bit-slices.js';
-import { Hashed } from '../provable-types/packed.js';
+import { arrayGet, assertBoolean } from './basic-bn254.js';
+import { sliceField3 } from './bit-slices-bn254.js';
+import { Hashed } from '../provable-types/packed-bn254.js';
 
 // external API
 export { EllipticCurveBn254, PointBn254, Ecdsa };

@@ -392,7 +392,7 @@ class FieldBn254 {
   isEven() {
     if (this.isConstant()) return new BoolBn254(this.toBigInt() % 2n === 0n);
 
-    let [, isOddVar, xDiv2Var] = Snarky.exists(2, () => {
+    let [, isOddVar, xDiv2Var] = Snarky.bn254.exists(2, () => {
       let bits = Fp.toBits(this.toBigInt());
       let isOdd = bits.shift()! ? 1n : 0n;
 
@@ -447,7 +447,7 @@ class FieldBn254 {
       return new FieldBn254(z);
     }
     // create a new witness for z = x*y
-    let z = Snarky.existsVar(() =>
+    let z = Snarky.bn254.existsVar(() =>
       FieldConst.fromBigint(Fp.mul(this.toBigInt(), toFp(y)))
     );
     // add a multiplication constraint
@@ -479,7 +479,7 @@ class FieldBn254 {
       return new FieldBn254(z);
     }
     // create a witness for z = x^(-1)
-    let z = Snarky.existsVar(() => {
+    let z = Snarky.bn254.existsVar(() => {
       let z = Fp.inverse(this.toBigInt()) ?? 0n;
       return FieldConst.fromBigint(z);
     });
@@ -546,7 +546,7 @@ class FieldBn254 {
       return new FieldBn254(Fp.square(this.toBigInt()));
     }
     // create a new witness for z = x^2
-    let z = Snarky.existsVar(() =>
+    let z = Snarky.bn254.existsVar(() =>
       FieldConst.fromBigint(Fp.square(this.toBigInt()))
     );
     // add a squaring constraint
@@ -581,7 +581,7 @@ class FieldBn254 {
       return new FieldBn254(z);
     }
     // create a witness for sqrt(x)
-    let z = Snarky.existsVar(() => {
+    let z = Snarky.bn254.existsVar(() => {
       let z = Fp.sqrt(this.toBigInt()) ?? 0n;
       return FieldConst.fromBigint(z);
     });
@@ -599,7 +599,7 @@ class FieldBn254 {
     }
     // create witnesses z = 1/x, or z=0 if x=0,
     // and b = 1 - zx
-    let [, b, z] = Snarky.exists(2, () => {
+    let [, b, z] = Snarky.bn254.exists(2, () => {
       let x = this.toBigInt();
       let z = Fp.inverse(x) ?? 0n;
       let b = Fp.sub(1n, Fp.mul(z, x));
@@ -640,7 +640,7 @@ class FieldBn254 {
       return this.sub(y).isZero();
     }
     // if both are variables, we create one new variable for x-y so that `isZero` doesn't create two
-    let xMinusY = Snarky.existsVar(() =>
+    let xMinusY = Snarky.bn254.existsVar(() =>
       FieldConst.fromBigint(Fp.sub(this.toBigInt(), toFp(y)))
     );
     Snarky.bn254.field.assertEqual(this.sub(y).value, xMinusY);

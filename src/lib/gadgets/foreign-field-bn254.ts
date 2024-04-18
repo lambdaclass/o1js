@@ -7,12 +7,12 @@ import {
 } from '../../bindings/crypto/finite-field.js';
 import { provableTuple } from '../../bindings/lib/provable-snarky.js';
 import { BoolBn254 } from '../bool-bn254.js';
-import { Unconstrained } from '../circuit-value.js';
+import { Unconstrained } from '../circuit-value-bn254.js';
 import { FieldBn254 } from '../field-bn254.js';
 import { GatesBn254, foreignFieldAdd } from '../gates-bn254.js';
-import { modifiedField } from '../provable-types/fields.js';
+import { modifiedField } from '../provable-types/fields-bn254.js';
 import { Tuple, TupleN } from '../util/types.js';
-import { assertOneOf } from './basic.js';
+import { assertOneOf } from './basic-bn254.js';
 import { assert, bitSlice, exists, toVar, toVars } from './common-bn254.js';
 import {
   l,
