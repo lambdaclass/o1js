@@ -135,6 +135,7 @@ export { provable as provableBn254 } from './lib/circuit-value-bn254.js';
 export { ProvableBn254 } from './lib/provable-bn254.js';
 export { CircuitBn254, KeypairBn254, publicBn254, circuitMainBn254 } from './lib/circuit-bn254.js';
 export { GadgetsBn254 } from './lib/gadgets/gadgets-bn254.js';
+export { Poseidon as PoseidonBn254 } from './lib/hash-bn254.js';
 
 // experimental APIs
 import { memoizeWitness } from './lib/provable.js';
