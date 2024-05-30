@@ -1,5 +1,5 @@
-import { ProvablePureExtended } from '../circuit-value.js';
-import { Field } from '../field.js';
+import { ProvablePureExtended } from '../circuit-value.ts';
+import { Field } from '../field.ts';
 
 export { modifiedField, fields };
 
@@ -12,7 +12,7 @@ const ProvableField: ProvablePureExtended<Field, string> = {
   toFields: (x) => [x],
   toAuxiliary: () => [],
   fromFields: ([x]) => x,
-  check: () => {},
+  check: () => { },
   toInput: (x) => ({ fields: [x] }),
   toJSON: Field.toJSON,
   fromJSON: Field.fromJSON,
@@ -35,7 +35,7 @@ function fields(length: number): ProvablePureExtended<Field[], string[]> {
     toFields: id,
     toAuxiliary: () => [],
     fromFields: id,
-    check: () => {},
+    check: () => { },
     toInput: (x) => ({ fields: x }),
     toJSON: (x) => x.map(Field.toJSON),
     fromJSON: (x) => x.map(Field.fromJSON),

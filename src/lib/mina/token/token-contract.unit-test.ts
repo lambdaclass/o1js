@@ -8,7 +8,7 @@ import {
   TokenContract,
   Int64,
   PrivateKey,
-} from '../../../index.js';
+} from '../../../index.ts';
 
 class ExampleTokenContract extends TokenContract {
   // APPROVABLE API

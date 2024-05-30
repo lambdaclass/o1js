@@ -7,19 +7,19 @@ import {
   UInt32,
   Permissions,
 } from 'o1js';
-import { deployContracts, deployInvalidContracts } from './deploy-contracts.js';
-import { DummyContract } from './dummy-contract.js';
-import { VotingAppParams } from './factory.js';
-import { Member, MyMerkleWitness } from './member.js';
-import { Membership_ } from './membership.js';
-import { OffchainStorage } from './off-chain-storage.js';
-import { Voting_ } from './voting.js';
+import { deployContracts, deployInvalidContracts } from './deploy-contracts.ts';
+import { DummyContract } from './dummy-contract.ts';
+import { VotingAppParams } from './factory.ts';
+import { Member, MyMerkleWitness } from './member.ts';
+import { Membership_ } from './membership.ts';
+import { OffchainStorage } from './off-chain-storage.ts';
+import { Voting_ } from './voting.ts';
 import {
   assertValidTx,
   getResults,
   registerMember,
   vote,
-} from './voting-lib.js';
+} from './voting-lib.ts';
 
 type Votes = OffchainStorage<Member>;
 type Candidates = OffchainStorage<Member>;
@@ -302,8 +302,7 @@ export async function testSet(
 
     if (sequenceOverflowSet.voterContract.reducer.getActions().length < 3) {
       throw Error(
-        `Did not emit expected actions! Only emitted ${
-          sequenceOverflowSet.voterContract.reducer.getActions().length
+        `Did not emit expected actions! Only emitted ${sequenceOverflowSet.voterContract.reducer.getActions().length
         }`
       );
     }
@@ -893,8 +892,7 @@ export async function testSet(
 
     if (results[currentCandidate!.publicKey.toBase58()] !== 1) {
       throw Error(
-        `Candidate ${currentCandidate!.publicKey.toBase58()} should have one vote, but has ${
-          results[currentCandidate!.publicKey.toBase58()]
+        `Candidate ${currentCandidate!.publicKey.toBase58()} should have one vote, but has ${results[currentCandidate!.publicKey.toBase58()]
         } `
       );
     }

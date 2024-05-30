@@ -1,13 +1,13 @@
 /**
  * helpers for testing equivalence of two implementations, one of them on bigints
  */
-import { test, Random } from '../testing/property.js';
-import { Provable } from '../provable.js';
+import { test, Random } from '../testing/property.ts';
+import { Provable } from '../provable.ts';
 import { deepEqual } from 'node:assert/strict';
-import { Bool, Field } from '../core.js';
-import { AnyFunction, Tuple } from '../util/types.js';
-import { provable } from '../circuit-value.js';
-import { assert } from '../gadgets/common.js';
+import { Bool, Field } from '../core.ts';
+import { AnyFunction, Tuple } from '../util/types.ts';
+import { provable } from '../circuit-value.ts';
+import { assert } from '../gadgets/common.ts';
 
 export {
   equivalent,

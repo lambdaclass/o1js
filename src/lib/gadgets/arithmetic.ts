@@ -1,9 +1,9 @@
-import { Bool } from '../bool.js';
-import { provableTuple } from '../circuit-value.js';
-import { Field } from '../core.js';
-import { assert } from '../errors.js';
-import { Provable } from '../provable.js';
-import { rangeCheck32, rangeCheckN } from './range-check.js';
+import { Bool } from '../bool.ts';
+import { provableTuple } from '../circuit-value.ts';
+import { Field } from '../core.ts';
+import { assert } from '../errors.ts';
+import { Provable } from '../provable.ts';
+import { rangeCheck32, rangeCheckN } from './range-check.ts';
 
 export { divMod32, addMod32 };
 

@@ -1,16 +1,16 @@
-import { UInt32, UInt64 } from '../../provable/field-bigint.js';
-import { PrivateKey, PublicKey } from '../../provable/curve-bigint.js';
-import { HashInputLegacy } from '../../provable/poseidon-bigint.js';
-import { Memo } from './memo.js';
+import { UInt32, UInt64 } from '../../provable/field-bigint.ts';
+import { PrivateKey, PublicKey } from '../../provable/curve-bigint.ts';
+import { HashInputLegacy } from '../../provable/poseidon-bigint.ts';
+import { Memo } from './memo.ts';
 import {
   SignatureJson,
   Signature,
   signLegacy,
   verifyLegacy,
-} from './signature.js';
-import { Json } from '../../bindings/mina-transaction/gen/transaction-bigint.js';
-import { bytesToBits, stringToBytes } from '../../bindings/lib/binable.js';
-import { NetworkId } from './types.js';
+} from './signature.ts';
+import { Json } from '../../bindings/mina-transaction/gen/transaction-bigint.ts';
+import { bytesToBits, stringToBytes } from '../../bindings/lib/binable.ts';
+import { NetworkId } from './types.ts';
 
 export {
   signPayment,
@@ -256,9 +256,9 @@ type UserCommandEnum = {
 type BodyEnum =
   | { type: 'Payment'; value: Payment }
   | {
-      type: 'StakeDelegation';
-      value: { type: 'SetDelegate'; value: Delegation };
-    };
+    type: 'StakeDelegation';
+    value: { type: 'SetDelegate'; value: Delegation };
+  };
 
 type Common = {
   fee: UInt64;

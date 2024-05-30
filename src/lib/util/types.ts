@@ -1,4 +1,4 @@
-import { assert } from '../errors.js';
+import { assert } from '../errors.ts';
 
 export { AnyFunction, Tuple, TupleN, AnyTuple, TupleMap };
 
@@ -27,8 +27,8 @@ const Tuple = {
  */
 type TupleN<T, N extends number> = N extends N
   ? number extends N
-    ? [...T[]] // N is not typed as a constant => fall back to array
-    : [...TupleRec<T, N, []>]
+  ? [...T[]] // N is not typed as a constant => fall back to array
+  : [...TupleRec<T, N, []>]
   : never;
 
 const TupleN = {

@@ -4,19 +4,19 @@ import {
   provable,
   provablePure,
   StructNoJson,
-} from './circuit-value.js';
-import { memoizationContext, memoizeWitness, Provable } from './provable.js';
-import { Field, Bool } from './core.js';
+} from './circuit-value.ts';
+import { memoizationContext, memoizeWitness, Provable } from './provable.ts';
+import { Field, Bool } from './core.ts';
 import { Pickles, Test } from '../snarky.js';
-import { jsLayout } from '../bindings/mina-transaction/gen/js-layout.js';
+import { jsLayout } from '../bindings/mina-transaction/gen/js-layout.ts';
 import {
   Types,
   TypesBigint,
   toJSONEssential,
-} from '../bindings/mina-transaction/types.js';
-import { PrivateKey, PublicKey } from './signature.js';
-import { UInt64, UInt32, Int64, Sign } from './int.js';
-import type { SmartContract } from './zkapp.js';
+} from '../bindings/mina-transaction/types.ts';
+import { PrivateKey, PublicKey } from './signature.ts';
+import { UInt64, UInt32, Int64, Sign } from './int.ts';
+import type { SmartContract } from './zkapp.ts';
 import {
   Preconditions,
   Account,
@@ -26,50 +26,50 @@ import {
   OrIgnore,
   ClosedInterval,
   getAccountPreconditions,
-} from './precondition.js';
-import { dummyBase64Proof, Empty, Proof, Prover } from './proof-system.js';
-import { Memo } from '../mina-signer/src/memo.js';
+} from './precondition.ts';
+import { dummyBase64Proof, Empty, Proof, Prover } from './proof-system.ts';
+import { Memo } from '../mina-signer/src/memo.ts';
 import {
   Events,
   Actions,
-} from '../bindings/mina-transaction/transaction-leaves.js';
-import { TokenId as Base58TokenId } from './base58-encodings.js';
-import { hashWithPrefix, packToFields, Poseidon } from './hash.js';
+} from '../bindings/mina-transaction/transaction-leaves.ts';
+import { TokenId as Base58TokenId } from './base58-encodings.ts';
+import { hashWithPrefix, packToFields, Poseidon } from './hash.ts';
 import {
   mocks,
   prefixes,
   protocolVersions,
-} from '../bindings/crypto/constants.js';
-import { MlArray } from './ml/base.js';
+} from '../bindings/crypto/constants.ts';
+import { MlArray } from './ml/base.ts';
 import {
   Signature,
   signFieldElement,
   zkAppBodyPrefix,
-} from '../mina-signer/src/signature.js';
-import { MlFieldConstArray } from './ml/fields.js';
+} from '../mina-signer/src/signature.ts';
+import { MlFieldConstArray } from './ml/fields.ts';
 import {
   accountUpdatesToCallForest,
   CallForest,
   callForestHashGeneric,
   transactionCommitments,
-} from '../mina-signer/src/sign-zkapp-command.js';
-import { currentTransaction } from './mina/transaction-context.js';
-import { isSmartContract } from './mina/smart-contract-base.js';
-import { activeInstance } from './mina/mina-instance.js';
+} from '../mina-signer/src/sign-zkapp-command.ts';
+import { currentTransaction } from './mina/transaction-context.ts';
+import { isSmartContract } from './mina/smart-contract-base.ts';
+import { activeInstance } from './mina/mina-instance.ts';
 import {
   emptyHash,
   genericHash,
   MerkleList,
   MerkleListBase,
-} from './provable-types/merkle-list.js';
-import { Hashed } from './provable-types/packed.js';
+} from './provable-types/merkle-list.ts';
+import { Hashed } from './provable-types/packed.ts';
 import {
   accountUpdateLayout,
   smartContractContext,
-} from './mina/smart-contract-context.js';
-import { assert } from './util/assert.js';
-import { RandomId } from './provable-types/auxiliary.js';
-import { NetworkId } from '../mina-signer/src/types.js';
+} from './mina/smart-contract-context.ts';
+import { assert } from './util/assert.ts';
+import { RandomId } from './provable-types/auxiliary.ts';
+import { NetworkId } from '../mina-signer/src/types.ts';
 
 // external API
 export {
@@ -1028,9 +1028,8 @@ class AccountUpdate implements Types.AccountUpdate {
     if (insideContract) {
       let self = insideContract.this.self;
       self.approve(accountUpdate);
-      accountUpdate.label = `${
-        self.label || 'Unlabeled'
-      } > AccountUpdate.create()`;
+      accountUpdate.label = `${self.label || 'Unlabeled'
+        } > AccountUpdate.create()`;
     } else {
       currentTransaction()?.layout.pushTopLevel(accountUpdate);
       accountUpdate.label = `Mina.transaction() > AccountUpdate.create()`;
@@ -1169,7 +1168,7 @@ class AccountUpdate implements Types.AccountUpdate {
   ) {
     // construct the circuit type for a accountUpdate + other result
     let accountUpdateType = skipCheck
-      ? { ...provable(AccountUpdate), check() {} }
+      ? { ...provable(AccountUpdate), check() { } }
       : AccountUpdate;
     let combinedType = provable({
       accountUpdate: accountUpdateType,
@@ -1316,7 +1315,7 @@ function hashAccountUpdate(update: AccountUpdate) {
 class HashedAccountUpdate extends Hashed.create(
   AccountUpdate,
   hashAccountUpdate
-) {}
+) { }
 
 type AccountUpdateTreeBase = {
   id: number;
@@ -1493,9 +1492,9 @@ type UnfinishedTree = {
   readonly children: UnfinishedForest;
   siblings?: UnfinishedForest;
 } & (
-  | { final: HashedAccountUpdate; mutable?: undefined }
-  | { final?: undefined; mutable: AccountUpdate }
-);
+    | { final: HashedAccountUpdate; mutable?: undefined }
+    | { final?: undefined; mutable: AccountUpdate }
+  );
 
 type UnfinishedForestFinal = UnfinishedForest & {
   final: AccountUpdateForest;
@@ -2113,7 +2112,7 @@ function getZkappProver({ methodName, ZkappClass }: LazyProof) {
   if (ZkappClass._provers === undefined)
     throw Error(
       `Cannot prove execution of ${methodName}(), no prover found. ` +
-        `Try calling \`await ${ZkappClass.name}.compile()\` first, this will cache provers in the background.`
+      `Try calling \`await ${ZkappClass.name}.compile()\` first, this will cache provers in the background.`
     );
   let provers = ZkappClass._provers;
   let methodError =

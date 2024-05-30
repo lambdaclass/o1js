@@ -1,5 +1,5 @@
 import { SelfProof, Field, ZkProgram, Proof } from 'o1js';
-import { tic, toc } from '../examples/utils/tic-toc.node.js';
+import { tic, toc } from '../examples/utils/tic-toc.node.ts';
 
 let MaxProofsVerifiedZero = ZkProgram({
   name: 'no-recursion',

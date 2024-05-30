@@ -1,9 +1,9 @@
-import type { FiniteField } from '../../bindings/crypto/finite-field.js';
-import { ProvableSpec, spec } from '../testing/equivalent.js';
-import { Random } from '../testing/random.js';
-import { Gadgets } from './gadgets.js';
-import { assert } from './common.js';
-import { Bytes } from '../provable-types/provable-types.js';
+import type { FiniteField } from '../../bindings/crypto/finite-field.ts';
+import { ProvableSpec, spec } from '../testing/equivalent.ts';
+import { Random } from '../testing/random.ts';
+import { Gadgets } from './gadgets.ts';
+import { assert } from './common.ts';
+import { Bytes } from '../provable-types/provable-types.ts';
 
 export {
   foreignField,

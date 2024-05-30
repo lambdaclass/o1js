@@ -6,7 +6,7 @@ import {
   AccountUpdate,
   ZkappCommand,
   empty,
-} from '../../bindings/mina-transaction/gen/transaction-bigint.js';
+} from '../../bindings/mina-transaction/gen/transaction-bigint.ts';
 import {
   AuthRequired,
   Bool,
@@ -22,24 +22,24 @@ import {
   ZkappUri,
   PublicKey,
   StateHash,
-} from '../../bindings/mina-transaction/transaction-leaves-bigint.js';
-import { genericLayoutFold } from '../../bindings/lib/from-layout.js';
-import { jsLayout } from '../../bindings/mina-transaction/gen/js-layout.js';
+} from '../../bindings/mina-transaction/transaction-leaves-bigint.ts';
+import { genericLayoutFold } from '../../bindings/lib/from-layout.ts';
+import { jsLayout } from '../../bindings/mina-transaction/gen/js-layout.ts';
 import {
   PrimitiveTypeMap,
   primitiveTypeMap,
-} from '../../bindings/lib/generic.js';
-import { Scalar, PrivateKey, Group } from '../../provable/curve-bigint.js';
-import { Signature } from '../../mina-signer/src/signature.js';
-import { randomBytes } from '../../bindings/crypto/random.js';
-import { alphabet } from '../base58.js';
-import { bytesToBigInt } from '../../bindings/crypto/bigint-helpers.js';
-import { Memo } from '../../mina-signer/src/memo.js';
-import { Signable } from '../../bindings/lib/provable-bigint.js';
-import { tokenSymbolLength } from '../../bindings/mina-transaction/derived-leaves.js';
-import { stringLengthInBytes } from '../../bindings/lib/binable.js';
-import { mocks } from '../../bindings/crypto/constants.js';
-import type { FiniteField } from '../../bindings/crypto/finite-field.js';
+} from '../../bindings/lib/generic.ts';
+import { Scalar, PrivateKey, Group } from '../../provable/curve-bigint.ts';
+import { Signature } from '../../mina-signer/src/signature.ts';
+import { randomBytes } from '../../bindings/crypto/random.ts';
+import { alphabet } from '../base58.ts';
+import { bytesToBigInt } from '../../bindings/crypto/bigint-helpers.ts';
+import { Memo } from '../../mina-signer/src/memo.ts';
+import { Signable } from '../../bindings/lib/provable-bigint.ts';
+import { tokenSymbolLength } from '../../bindings/mina-transaction/derived-leaves.ts';
+import { stringLengthInBytes } from '../../bindings/lib/binable.ts';
+import { mocks } from '../../bindings/crypto/constants.ts';
+import type { FiniteField } from '../../bindings/crypto/finite-field.ts';
 
 export { Random, sample, withHardCoded };
 
@@ -115,8 +115,8 @@ const zkappUri = map(string(nat(50)), ZkappUri.fromJSON);
 type Types = typeof TypeMap & typeof customTypes & PrimitiveTypeMap<bigint>;
 type Generators = {
   [K in keyof Types]: Types[K] extends Signable<infer U, any>
-    ? Random<U>
-    : never;
+  ? Random<U>
+  : never;
 };
 const Generators: Generators = {
   Field: field,
@@ -221,8 +221,8 @@ function withInvalidRandomString<T extends string>(rng: Random<T>) {
 
 type JsonGenerators = {
   [K in keyof Types]: Types[K] extends Signable<any, infer J>
-    ? Random<J>
-    : never;
+  ? Random<J>
+  : never;
 };
 const JsonGenerators: JsonGenerators = {
   Field: json_.field,
@@ -421,9 +421,9 @@ function isGenerator<T>(rng: any): rng is Random<T> {
 function oneOf<Types extends readonly any[]>(
   ...values: {
     [K in keyof Types]:
-      | Random<Types[K]>
-      | RandomWithInvalid<Types[K]>
-      | Types[K];
+    | Random<Types[K]>
+    | RandomWithInvalid<Types[K]>
+    | Types[K];
   }
 ): Random<Types[number]> {
   let gens = values.map(maybeConstant);

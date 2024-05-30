@@ -11,7 +11,7 @@ import {
   Bool,
   PublicKey,
 } from 'o1js';
-import { getProfiler } from './utils/profiler.js';
+import { getProfiler } from './utils/profiler.ts';
 
 const doProofs = true;
 

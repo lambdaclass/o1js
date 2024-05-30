@@ -1,10 +1,10 @@
-import 'reflect-metadata';
+import 'npm:reflect_metadata';
 import { ProvablePure, Snarky } from '../snarky.js';
-import { MlFieldArray, MlFieldConstArray } from './ml/fields.js';
+import { MlFieldArray, MlFieldConstArray } from './ml/fields.ts';
 import { withThreadPool } from '../bindings/js/wrapper.js';
-import { Provable } from './provable.js';
-import { snarkContext, gatesFromJson } from './provable-context.js';
-import { prettifyStacktrace, prettifyStacktracePromise } from './errors.js';
+import { Provable } from './provable.ts';
+import { snarkContext, gatesFromJson } from './provable-context.ts';
+import { prettifyStacktrace, prettifyStacktracePromise } from './errors.ts';
 
 // external API
 export { public_, circuitMain, Circuit, Keypair, Proof, VerificationKey };

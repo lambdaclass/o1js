@@ -1,25 +1,25 @@
-import { inverse, mod } from '../../bindings/crypto/finite-field.js';
-import { FieldBn254 } from '../field-bn254.js';
-import { ProvableBn254 } from '../provable-bn254.js';
-import { assert, exists } from './common-bn254.js';
-import { Field3, ForeignFieldBn254, split, weakBound } from './foreign-field-bn254.js';
-import { l2, multiRangeCheck } from './range-check-bn254.js';
-import { sha256 } from 'js-sha256';
+import { inverse, mod } from '../../bindings/crypto/finite-field.ts';
+import { FieldBn254 } from '../field-bn254.ts';
+import { ProvableBn254 } from '../provable-bn254.ts';
+import { assert, exists } from './common-bn254.ts';
+import { Field3, ForeignFieldBn254, split, weakBound } from './foreign-field-bn254.ts';
+import { l2, multiRangeCheck } from './range-check-bn254.ts';
+import { sha256 } from 'npm:js-sha256';
 import {
   bigIntToBytes,
   bytesToBigInt,
-} from '../../bindings/crypto/bigint-helpers.js';
+} from '../../bindings/crypto/bigint-helpers.ts';
 import {
   CurveAffine,
   affineAdd,
   affineDouble,
-} from '../../bindings/crypto/elliptic-curve.js';
-import { BoolBn254 } from '../bool-bn254.js';
-import { provable } from '../circuit-value-bn254.js';
-import { assertPositiveInteger } from '../../bindings/crypto/non-negative.js';
-import { arrayGet, assertBoolean } from './basic-bn254.js';
-import { sliceField3 } from './bit-slices-bn254.js';
-import { Hashed } from '../provable-types/packed-bn254.js';
+} from '../../bindings/crypto/elliptic-curve.ts';
+import { BoolBn254 } from '../bool-bn254.ts';
+import { provable } from '../circuit-value-bn254.ts';
+import { assertPositiveInteger } from '../../bindings/crypto/non-negative.ts';
+import { arrayGet, assertBoolean } from './basic-bn254.ts';
+import { sliceField3 } from './bit-slices-bn254.ts';
+import { Hashed } from '../provable-types/packed-bn254.ts';
 
 // external API
 export { EllipticCurveBn254, PointBn254, Ecdsa };

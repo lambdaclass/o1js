@@ -1,5 +1,5 @@
-import { FieldBn254, ConstantField, FieldConst, FieldVar } from '../field-bn254.js';
-import { MlArray } from './base.js';
+import { FieldBn254, ConstantField, FieldConst, FieldVar } from '../field-bn254.ts';
+import { MlArray } from './base.ts';
 export { MlFieldArray, MlFieldConstArray };
 
 type MlFieldArray = MlArray<FieldVar>;

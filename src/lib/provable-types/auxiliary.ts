@@ -1,4 +1,4 @@
-import type { ProvableHashable } from '../hash.js';
+import type { ProvableHashable } from '../hash.ts';
 
 export { RandomId };
 
@@ -7,7 +7,7 @@ const RandomId: ProvableHashable<number> = {
   toFields: () => [],
   toAuxiliary: (v = Math.random()) => [v],
   fromFields: (_, [v]) => v,
-  check: () => {},
+  check: () => { },
   toInput: () => ({}),
   empty: () => Math.random(),
 };

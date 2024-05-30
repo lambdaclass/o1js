@@ -1,8 +1,8 @@
-import { FieldBn254, FieldConst, FieldVar, VarField } from '../field-bn254.js';
-import { Tuple, TupleN } from '../util/types.js';
+import { FieldBn254, FieldConst, FieldVar, VarField } from '../field-bn254.ts';
+import { Tuple, TupleN } from '../util/types.ts';
 import { Snarky } from '../../snarky.js';
-import { MlArray } from '../ml/base.js';
-import { BoolBn254 } from '../bool-bn254.js';
+import { MlArray } from '../ml/base.ts';
+import { BoolBn254 } from '../bool-bn254.ts';
 
 const MAX_BITS = 64 as const;
 

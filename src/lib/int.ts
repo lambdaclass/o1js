@@ -1,13 +1,13 @@
-import { Field, Bool } from './core.js';
-import { AnyConstructor, CircuitValue, Struct, prop } from './circuit-value.js';
-import { Types } from '../bindings/mina-transaction/types.js';
-import { HashInput } from './hash.js';
-import { Provable } from './provable.js';
-import * as RangeCheck from './gadgets/range-check.js';
-import * as Bitwise from './gadgets/bitwise.js';
-import { addMod32 } from './gadgets/arithmetic.js';
-import type { Gadgets } from './gadgets/gadgets.js';
-import { FieldVar, withMessage } from './field.js';
+import { Field, Bool } from './core.ts';
+import { AnyConstructor, CircuitValue, Struct, prop } from './circuit-value.ts';
+import { Types } from '../bindings/mina-transaction/types.ts';
+import { HashInput } from './hash.ts';
+import { Provable } from './provable.ts';
+import * as RangeCheck from './gadgets/range-check.ts';
+import * as Bitwise from './gadgets/bitwise.ts';
+import { addMod32 } from './gadgets/arithmetic.ts';
+import type { Gadgets } from './gadgets/gadgets.ts';
+import { FieldVar, withMessage } from './field.ts';
 
 // external API
 export { UInt8, UInt32, UInt64, Int64, Sign };

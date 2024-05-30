@@ -4,16 +4,16 @@
 import {
   inverse as modInverse,
   mod,
-} from '../../bindings/crypto/finite-field.js';
+} from '../../bindings/crypto/finite-field.ts';
 import { provableTuple } from '../../bindings/lib/provable-snarky.js';
-import { Bool } from '../bool.js';
-import { Unconstrained } from '../circuit-value.js';
-import { Field } from '../field.js';
-import { Gates, foreignFieldAdd } from '../gates.js';
-import { modifiedField } from '../provable-types/fields.js';
-import { Tuple, TupleN } from '../util/types.js';
-import { assertOneOf } from './basic.js';
-import { assert, bitSlice, exists, toVar, toVars } from './common.js';
+import { Bool } from '../bool.ts';
+import { Unconstrained } from '../circuit-value.ts';
+import { Field } from '../field.ts';
+import { Gates, foreignFieldAdd } from '../gates.ts';
+import { modifiedField } from '../provable-types/fields.ts';
+import { Tuple, TupleN } from '../util/types.ts';
+import { assertOneOf } from './basic.ts';
+import { assert, bitSlice, exists, toVar, toVars } from './common.ts';
 import {
   l,
   lMask,
@@ -22,7 +22,7 @@ import {
   l2Mask,
   l3,
   compactMultiRangeCheck,
-} from './range-check.js';
+} from './range-check.ts';
 
 // external API
 export { ForeignField, Field3 };

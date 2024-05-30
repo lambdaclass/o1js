@@ -1,7 +1,7 @@
-import { versionBytes } from '../bindings/crypto/constants.js';
-import { Binable, withVersionNumber } from '../bindings/lib/binable.js';
-import { sha256 } from 'js-sha256';
-import { changeBase } from '../bindings/crypto/bigint-helpers.js';
+import { versionBytes } from '../bindings/crypto/constants.ts';
+import { Binable, withVersionNumber } from '../bindings/lib/binable.ts';
+import { sha256 } from 'npm:js-sha256';
+import { changeBase } from '../bindings/crypto/bigint-helpers.ts';
 
 export {
   toBase58Check,

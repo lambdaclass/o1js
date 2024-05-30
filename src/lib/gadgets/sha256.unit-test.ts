@@ -1,10 +1,10 @@
-import { ZkProgram } from '../proof-system.js';
-import { Bytes } from '../provable-types/provable-types.js';
-import { Gadgets } from './gadgets.js';
+import { ZkProgram } from '../proof-system.ts';
+import { Bytes } from '../provable-types/provable-types.ts';
+import { Gadgets } from './gadgets.ts';
 import { sha256 as nobleSha256 } from '@noble/hashes/sha256';
-import { bytes } from './test-utils.js';
-import { equivalentAsync, equivalentProvable } from '../testing/equivalent.js';
-import { Random, sample } from '../testing/random.js';
+import { bytes } from './test-utils.ts';
+import { equivalentAsync, equivalentProvable } from '../testing/equivalent.ts';
+import { Random, sample } from '../testing/random.ts';
 import { expect } from 'expect';
 
 sample(Random.nat(400), 5).forEach((preimageLength) => {

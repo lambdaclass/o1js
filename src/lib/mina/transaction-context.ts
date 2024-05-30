@@ -1,6 +1,6 @@
-import type { AccountUpdateLayout } from '../account-update.js';
-import type { PublicKey } from '../signature.js';
-import { Context } from '../global-context.js';
+import type { AccountUpdateLayout } from '../account-update.ts';
+import type { PublicKey } from '../signature.ts';
+import { Context } from '../global-context.ts';
 
 export { currentTransaction, CurrentTransaction, FetchMode };
 

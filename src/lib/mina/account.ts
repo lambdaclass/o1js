@@ -1,17 +1,17 @@
-import { Types } from '../../bindings/mina-transaction/types.js';
-import { Bool, Field } from '../core.js';
-import { Permissions } from '../account-update.js';
-import { UInt32, UInt64 } from '../int.js';
-import { PublicKey } from '../signature.js';
-import { TokenId, ReceiptChainHash } from '../base58-encodings.js';
-import { genericLayoutFold } from '../../bindings/lib/from-layout.js';
+import { Types } from '../../bindings/mina-transaction/types.ts';
+import { Bool, Field } from '../core.ts';
+import { Permissions } from '../account-update.ts';
+import { UInt32, UInt64 } from '../int.ts';
+import { PublicKey } from '../signature.ts';
+import { TokenId, ReceiptChainHash } from '../base58-encodings.ts';
+import { genericLayoutFold } from '../../bindings/lib/from-layout.ts';
 import {
   customTypes,
   TypeMap,
-} from '../../bindings/mina-transaction/gen/transaction.js';
-import { jsLayout } from '../../bindings/mina-transaction/gen/js-layout.js';
-import { ProvableExtended } from '../circuit-value.js';
-import { FetchedAccount } from './graphql.js';
+} from '../../bindings/mina-transaction/gen/transaction.ts';
+import { jsLayout } from '../../bindings/mina-transaction/gen/js-layout.ts';
+import { ProvableExtended } from '../circuit-value.ts';
+import { FetchedAccount } from './graphql.ts';
 
 export { Account, PartialAccount };
 export { newAccount, parseFetchedAccount, fillPartialAccount };
@@ -84,32 +84,32 @@ function parseFetchedAccount({ account }: FetchedAccount): Account {
         initialMinimumBalance &&
         vestingIncrement &&
         vestingPeriod && {
-          isTimed: Bool(true),
-          cliffAmount: UInt64.from(cliffAmount),
-          cliffTime: UInt32.from(cliffTime),
-          initialMinimumBalance: UInt64.from(initialMinimumBalance),
-          vestingIncrement: UInt64.from(vestingIncrement),
-          vestingPeriod: UInt32.from(vestingPeriod),
-        }) ||
+        isTimed: Bool(true),
+        cliffAmount: UInt64.from(cliffAmount),
+        cliffTime: UInt32.from(cliffTime),
+        initialMinimumBalance: UInt64.from(initialMinimumBalance),
+        vestingIncrement: UInt64.from(vestingIncrement),
+        vestingPeriod: UInt32.from(vestingPeriod),
+      }) ||
       undefined,
     permissions:
       (permissions && Permissions.fromJSON(permissions)) ??
       Permissions.initial(),
     zkapp: hasZkapp
       ? {
-          appState: (zkappState && zkappState.map(Field)) ?? undefined,
-          verificationKey:
-            (verificationKey && {
-              data: verificationKey.verificationKey,
-              hash: Field(verificationKey.hash),
-            }) ??
-            undefined,
-          zkappVersion: undefined, // TODO
-          actionState: (actionState && actionState.map(Field)) ?? undefined,
-          lastActionSlot: undefined, // TODO
-          provedState: provedState !== null ? Bool(provedState) : undefined,
-          zkappUri: zkappUri !== null ? zkappUri : undefined,
-        }
+        appState: (zkappState && zkappState.map(Field)) ?? undefined,
+        verificationKey:
+          (verificationKey && {
+            data: verificationKey.verificationKey,
+            hash: Field(verificationKey.hash),
+          }) ??
+          undefined,
+        zkappVersion: undefined, // TODO
+        actionState: (actionState && actionState.map(Field)) ?? undefined,
+        lastActionSlot: undefined, // TODO
+        provedState: provedState !== null ? Bool(provedState) : undefined,
+        zkappUri: zkappUri !== null ? zkappUri : undefined,
+      }
       : undefined,
   };
   return fillPartialAccount(partialAccount);

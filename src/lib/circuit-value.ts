@@ -1,6 +1,6 @@
-import 'reflect-metadata';
+import 'npm:reflect-metadata';
 import { ProvablePure, Snarky } from '../snarky.js';
-import { Field, Bool, Scalar, Group } from './core.js';
+import { Field, Bool, Scalar, Group } from './core.ts';
 import {
   provable,
   provablePure,
@@ -14,10 +14,10 @@ import type {
   InferredProvable,
   IsPure,
 } from '../bindings/lib/provable-snarky.js';
-import { Provable } from './provable.js';
-import { assert } from './errors.js';
-import { inCheckedComputation } from './provable-context.js';
-import { Proof } from './proof-system.js';
+import { Provable } from './provable.ts';
+import { assert } from './errors.ts';
+import { inCheckedComputation } from './provable-context.ts';
+import { Proof } from './proof-system.ts';
 
 // external API
 export {

@@ -48,7 +48,7 @@ const config: PlaywrightTestConfig = {
     trace: 'retain-on-failure',
     storageState: './tests/artifacts/config/storageState.json',
   },
-  testIgnore: ['*.js'],
+  testIgnore: ['*.ts'],
   /* Configure projects for major browsers */
   projects: [
     {

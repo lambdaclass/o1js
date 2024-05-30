@@ -1,4 +1,4 @@
-import { HashStorage } from './hash.js';
+import { HashStorage } from './hash.ts';
 import { Mina, PrivateKey, AccountUpdate, Bytes } from 'o1js';
 
 let txn;

@@ -14,14 +14,14 @@ import {
   Provable,
 } from 'o1js';
 import assert from 'node:assert/strict';
-import { getProfiler } from '../../utils/profiler.js';
+import { getProfiler } from '../../utils/profiler.ts';
 
 await isReady;
 
 class MaybeIncrement extends Struct({
   isIncrement: Bool,
   otherData: Field,
-}) {}
+}) { }
 const INCREMENT = { isIncrement: Bool(true), otherData: Field(0) };
 
 class CounterZkapp extends SmartContract {

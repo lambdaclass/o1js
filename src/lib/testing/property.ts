@@ -1,6 +1,6 @@
-import { Random } from './random.js';
+import { Random } from './random.ts';
 export { test };
-export { Random, sample, withHardCoded } from './random.js';
+export { Random, sample, withHardCoded } from './random.ts';
 
 const defaultTimeBudget = 100; // ms
 const defaultMinRuns = 15;

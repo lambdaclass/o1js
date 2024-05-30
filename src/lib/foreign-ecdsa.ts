@@ -1,20 +1,20 @@
 import { provableFromClass } from '../bindings/lib/provable-snarky.js';
-import { CurveParams } from '../bindings/crypto/elliptic-curve.js';
-import { ProvablePureExtended } from './circuit-value.js';
+import { CurveParams } from '../bindings/crypto/elliptic-curve.ts';
+import { ProvablePureExtended } from './circuit-value.ts';
 import {
   FlexiblePoint,
   ForeignCurve,
   createForeignCurve,
   toPoint,
-} from './foreign-curve.js';
-import { AlmostForeignField } from './foreign-field.js';
-import { assert } from './gadgets/common.js';
-import { Field3 } from './gadgets/foreign-field.js';
-import { Ecdsa } from './gadgets/elliptic-curve.js';
-import { l } from './gadgets/range-check.js';
-import { Keccak } from './keccak.js';
-import { Bytes } from './provable-types/provable-types.js';
-import { UInt8 } from './int.js';
+} from './foreign-curve.ts';
+import { AlmostForeignField } from './foreign-field.ts';
+import { assert } from './gadgets/common.ts';
+import { Field3 } from './gadgets/foreign-field.ts';
+import { Ecdsa } from './gadgets/elliptic-curve.ts';
+import { l } from './gadgets/range-check.ts';
+import { Keccak } from './keccak.ts';
+import { Bytes } from './provable-types/provable-types.ts';
+import { UInt8 } from './int.ts';
 
 // external API
 export { createEcdsa, EcdsaSignature };
@@ -22,9 +22,9 @@ export { createEcdsa, EcdsaSignature };
 type FlexibleSignature =
   | EcdsaSignature
   | {
-      r: AlmostForeignField | Field3 | bigint | number;
-      s: AlmostForeignField | Field3 | bigint | number;
-    };
+    r: AlmostForeignField | Field3 | bigint | number;
+    s: AlmostForeignField | Field3 | bigint | number;
+  };
 
 class EcdsaSignature {
   r: AlmostForeignField;
@@ -191,7 +191,7 @@ function createEcdsa(
 ): typeof EcdsaSignature {
   let Curve0: typeof ForeignCurve =
     'b' in curve ? createForeignCurve(curve) : curve;
-  class Curve extends Curve0 {}
+  class Curve extends Curve0 { }
 
   class Signature extends EcdsaSignature {
     static _Curve = Curve;

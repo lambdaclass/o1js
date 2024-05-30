@@ -1,10 +1,10 @@
-import { Bn254Fp, mod } from '../bindings/crypto/finite-field.js';
-import { pseudoClass, checkRange } from './field-bigint.js';
+import { Bn254Fp, mod } from '../bindings/crypto/finite-field.ts';
+import { pseudoClass, checkRange } from './field-bigint.ts';
 import {
   BinableBigint,
   HashInput,
   ProvableBigint,
-} from '../bindings/lib/provable-bigint.js';
+} from '../bindings/lib/provable-bigint.ts';
 
 export { FieldBn254, BoolBn254 };
 export { sizeInBits, checkField };

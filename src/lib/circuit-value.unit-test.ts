@@ -1,13 +1,13 @@
-import { provable, Struct, Unconstrained } from './circuit-value.js';
-import { UInt32 } from './int.js';
-import { PrivateKey, PublicKey } from './signature.js';
+import { provable, Struct, Unconstrained } from './circuit-value.ts';
+import { UInt32 } from './int.ts';
+import { PrivateKey, PublicKey } from './signature.ts';
 import { expect } from 'expect';
-import { method, SmartContract } from './zkapp.js';
-import { LocalBlockchain, setActiveInstance, transaction } from './mina.js';
-import { State, state } from './state.js';
-import { AccountUpdate } from './account-update.js';
-import { Provable } from './provable.js';
-import { Field } from './core.js';
+import { method, SmartContract } from './zkapp.ts';
+import { LocalBlockchain, setActiveInstance, transaction } from './mina.ts';
+import { State, state } from './state.ts';
+import { AccountUpdate } from './account-update.ts';
+import { Provable } from './provable.ts';
+import { Field } from './core.ts';
 
 let type = provable({
   nested: { a: Number, b: Boolean },
@@ -84,16 +84,16 @@ class MyStruct extends Struct({
   other: String,
   pk: PublicKey,
   uint: [UInt32, UInt32],
-}) {}
+}) { }
 
 class MyStructPure extends Struct({
   nested: { a: Field, b: UInt32 },
   other: Field,
   pk: PublicKey,
   uint: [UInt32, UInt32],
-}) {}
+}) { }
 
-class MyTuple extends Struct([PublicKey, String]) {}
+class MyTuple extends Struct([PublicKey, String]) { }
 
 let targetString = 'some particular string';
 let targetBigint = 99n;

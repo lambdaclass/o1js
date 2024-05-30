@@ -1,7 +1,7 @@
-import { UInt32 } from '../int.js';
-import type { ZkappCommand } from '../account-update.js';
-import type { ActionStatesStringified } from '../fetch.js';
-import { Types } from '../../bindings/mina-transaction/types.js';
+import { UInt32 } from '../int.ts';
+import type { ZkappCommand } from '../account-update.ts';
+import type { ActionStatesStringified } from '../fetch.ts';
+import { Types } from '../../bindings/mina-transaction/types.ts';
 
 export {
   type EpochData,

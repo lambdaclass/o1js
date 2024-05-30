@@ -1,9 +1,9 @@
-import { Field, sizeInBits } from './field-bigint.js';
-import { Poseidon, PoseidonLegacy } from '../bindings/crypto/poseidon.js';
-import { prefixes } from '../bindings/crypto/constants.js';
-import { createHashInput } from '../bindings/lib/provable-generic.js';
-import { GenericHashInput } from '../bindings/lib/generic.js';
-import { createHashHelpers } from '../lib/hash-generic.js';
+import { Field, sizeInBits } from './field-bigint.ts';
+import { Poseidon, PoseidonLegacy } from '../bindings/crypto/poseidon.ts';
+import { prefixes } from '../bindings/crypto/constants.ts';
+import { createHashInput } from '../bindings/lib/provable-generic.ts';
+import { GenericHashInput } from '../bindings/lib/generic.ts';
+import { createHashHelpers } from '../lib/hash-generic.ts';
 
 export {
   Poseidon,

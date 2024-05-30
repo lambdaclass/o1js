@@ -1,14 +1,14 @@
-import { ZkProgram } from '../proof-system.js';
+import { ZkProgram } from '../proof-system.ts';
 import {
   equivalentProvable as equivalent,
   equivalentAsync,
   field,
   fieldWithRng,
-} from '../testing/equivalent.js';
-import { Fp, mod } from '../../bindings/crypto/finite-field.js';
-import { Field } from '../core.js';
-import { Gadgets } from './gadgets.js';
-import { Random } from '../testing/property.js';
+} from '../testing/equivalent.ts';
+import { Fp, mod } from '../../bindings/crypto/finite-field.ts';
+import { Field } from '../core.ts';
+import { Gadgets } from './gadgets.ts';
+import { Random } from '../testing/property.ts';
 import {
   constraintSystem,
   contains,
@@ -17,7 +17,7 @@ import {
   repeat,
   and,
   withoutGenerics,
-} from '../testing/constraint-system.js';
+} from '../testing/constraint-system.ts';
 import { GateType } from '../../snarky.js';
 
 const maybeField = {

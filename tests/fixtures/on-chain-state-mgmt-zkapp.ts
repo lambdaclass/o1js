@@ -1,5 +1,5 @@
 import { test as base } from '@playwright/test';
-import { OnChainStateMgmtZkAppPage } from '../pages/on-chain-state-mgmt-zkapp.js';
+import { OnChainStateMgmtZkAppPage } from '../pages/on-chain-state-mgmt-zkapp.ts';
 
 type OnChainStateMgmtZkAppFixture = {
   onChainStateMgmtZkAppPage: OnChainStateMgmtZkAppPage;

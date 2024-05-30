@@ -1,6 +1,6 @@
-import { Types } from '../../bindings/mina-transaction/types.js';
-import { TokenId } from '../account-update.js';
-import { Int64 } from '../int.js';
+import { Types } from '../../bindings/mina-transaction/types.ts';
+import { TokenId } from '../account-update.ts';
+import { Int64 } from '../int.ts';
 
 export { invalidTransactionError };
 
@@ -24,25 +24,24 @@ This means that balance changes in your transaction do not sum up to the amount 
 Here's the list of balance changes:
 
 ${balances
-  .map((balance, i) => {
-    return `Account update #${i + 1}) ${
-      balance === undefined
-        ? 'not a MINA account'
-        : `${balance.toFixed(2)} MINA`
-    }`;
-  })
-  .join(`\n`)}
+        .map((balance, i) => {
+          return `Account update #${i + 1}) ${balance === undefined
+              ? 'not a MINA account'
+              : `${balance.toFixed(2)} MINA`
+            }`;
+        })
+        .join(`\n`)}
 
 Total change: ${sum.toFixed(2)} MINA
 
 If there are no new accounts created in your transaction, then this sum should be equal to 0.00 MINA.
 If you are creating new accounts -- by updating accounts that didn't exist yet --
 then keep in mind the ${(Number(accountCreationFee) * 1e-9).toFixed(
-      2
-    )} MINA account creation fee, and make sure that the sum equals
+          2
+        )} MINA account creation fee, and make sure that the sum equals
 ${(-Number(accountCreationFee) * 1e-9).toFixed(
-  2
-)} times the number of newly created accounts.`;
+          2
+        )} times the number of newly created accounts.`;
   },
 };
 

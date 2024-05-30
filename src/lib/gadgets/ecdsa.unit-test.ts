@@ -1,17 +1,17 @@
-import { createCurveAffine } from '../../bindings/crypto/elliptic-curve.js';
+import { createCurveAffine } from '../../bindings/crypto/elliptic-curve.ts';
 import {
   Ecdsa,
   EllipticCurve,
   Point,
   initialAggregator,
   verifyEcdsaConstant,
-} from './elliptic-curve.js';
-import { Field3 } from './foreign-field.js';
-import { CurveParams } from '../../bindings/crypto/elliptic-curve-examples.js';
-import { Provable } from '../provable.js';
-import { ZkProgram } from '../proof-system.js';
-import { assert } from './common.js';
-import { foreignField, uniformForeignField } from './test-utils.js';
+} from './elliptic-curve.ts';
+import { Field3 } from './foreign-field.ts';
+import { CurveParams } from '../../bindings/crypto/elliptic-curve-examples.ts';
+import { Provable } from '../provable.ts';
+import { ZkProgram } from '../proof-system.ts';
+import { assert } from './common.ts';
+import { foreignField, uniformForeignField } from './test-utils.ts';
 import {
   First,
   Second,
@@ -21,9 +21,9 @@ import {
   map,
   oneOf,
   record,
-} from '../testing/equivalent.js';
-import { Bool } from '../bool.js';
-import { Random } from '../testing/random.js';
+} from '../testing/equivalent.ts';
+import { Bool } from '../bool.ts';
+import { Random } from '../testing/random.ts';
 
 // quick tests
 const Secp256k1 = createCurveAffine(CurveParams.Secp256k1);

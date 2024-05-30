@@ -4,7 +4,7 @@ import {
   strings,
   keypair,
   signatures,
-} from './test-vectors/legacySignatures.js';
+} from './test-vectors/legacySignatures.ts';
 import {
   PaymentJson,
   signPayment,
@@ -13,14 +13,14 @@ import {
   verifyPayment,
   verifyStakeDelegation,
   verifyStringSignature,
-} from './sign-legacy.js';
-import { Signature, SignatureJson } from './signature.js';
+} from './sign-legacy.ts';
+import { Signature, SignatureJson } from './signature.ts';
 import { expect } from 'expect';
-import { PublicKey, Scalar } from '../../provable/curve-bigint.js';
-import { Field } from '../../provable/field-bigint.js';
-import { Random, test } from '../../lib/testing/property.js';
-import { RandomTransaction } from './random-transaction.js';
-import { NetworkId } from './types.js';
+import { PublicKey, Scalar } from '../../provable/curve-bigint.ts';
+import { Field } from '../../provable/field-bigint.ts';
+import { Random, test } from '../../lib/testing/property.ts';
+import { RandomTransaction } from './random-transaction.ts';
+import { NetworkId } from './types.ts';
 
 let { privateKey, publicKey } = keypair;
 let networks: NetworkId[] = ['testnet', 'mainnet'];

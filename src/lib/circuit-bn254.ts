@@ -1,10 +1,10 @@
 import 'reflect-metadata';
 import { ProvablePureBn254, Snarky } from '../snarky.js';
-import { MlFieldArray, MlFieldConstArray } from './ml/fields-bn254.js';
+import { MlFieldArray, MlFieldConstArray } from './ml/fields-bn254.ts';
 import { withThreadPool } from '../bindings/js/wrapper.js';
-import { ProvableBn254 } from './provable-bn254.js';
-import { snarkContext, gatesFromJson } from './provable-context-bn254.js';
-import { prettifyStacktrace, prettifyStacktracePromise } from './errors.js';
+import { ProvableBn254 } from './provable-bn254.ts';
+import { snarkContext, gatesFromJson } from './provable-context-bn254.ts';
+import { prettifyStacktrace, prettifyStacktracePromise } from './errors.ts';
 
 // external API
 export { publicBn254, circuitMainBn254, CircuitBn254, KeypairBn254, ProofBn254, VerificationKeyBn254 };

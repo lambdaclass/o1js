@@ -1,13 +1,13 @@
-import { SignedLegacy } from './transaction-hash.js';
-import { DelegationJson, PaymentJson } from './sign-legacy.js';
-import { Random } from '../../lib/testing/property.js';
+import { SignedLegacy } from './transaction-hash.ts';
+import { DelegationJson, PaymentJson } from './sign-legacy.ts';
+import { Random } from '../../lib/testing/property.ts';
 import {
   PublicKey,
   ZkappCommand,
-} from '../../bindings/mina-transaction/gen/transaction-bigint.js';
-import { PrivateKey } from '../../provable/curve-bigint.js';
-import { Signature } from './signature.js';
-import { NetworkId } from './types.js';
+} from '../../bindings/mina-transaction/gen/transaction-bigint.ts';
+import { PrivateKey } from '../../provable/curve-bigint.ts';
+import { Signature } from './signature.ts';
+import { NetworkId } from './types.ts';
 
 export { RandomTransaction };
 

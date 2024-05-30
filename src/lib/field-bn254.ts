@@ -1,10 +1,10 @@
 import { Snarky, ProvableBn254 } from '../snarky.js';
-import { FieldBn254 as Fp } from '../provable/field-bn254-bigint.js';
-import { defineBinable } from '../bindings/lib/binable.js';
-import type { NonNegativeInteger } from '../bindings/crypto/non-negative.js';
-import { asProverBn254, inCheckedComputation } from './provable-context-bn254.js';
-import { BoolBn254 } from './bool-bn254.js';
-import { assert } from './errors.js';
+import { FieldBn254 as Fp } from '../provable/field-bn254-bigint.ts';
+import { defineBinable } from '../bindings/lib/binable.ts';
+import type { NonNegativeInteger } from '../bindings/crypto/non-negative.ts';
+import { asProverBn254, inCheckedComputation } from './provable-context-bn254.ts';
+import { BoolBn254 } from './bool-bn254.ts';
+import { assert } from './errors.ts';
 
 // external API
 export { FieldBn254 };

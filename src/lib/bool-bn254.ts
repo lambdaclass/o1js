@@ -5,11 +5,11 @@ import {
   FieldType,
   FieldVar,
   readVarMessage,
-} from './field-bn254.js';
-import { BoolBn254 as B } from '../provable/field-bn254-bigint.js';
-import { defineBinable } from '../bindings/lib/binable.js';
-import { NonNegativeInteger } from '../bindings/crypto/non-negative.js';
-import { asProverBn254 } from './provable-context-bn254.js';
+} from './field-bn254.ts';
+import { BoolBn254 as B } from '../provable/field-bn254-bigint.ts';
+import { defineBinable } from '../bindings/lib/binable.ts';
+import { NonNegativeInteger } from '../bindings/crypto/non-negative.ts';
+import { asProverBn254 } from './provable-context-bn254.ts';
 
 export { BoolVar, BoolBn254 };
 

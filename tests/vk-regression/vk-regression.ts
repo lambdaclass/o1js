@@ -1,14 +1,14 @@
 import fs from 'fs';
-import { Voting_ } from '../../src/examples/zkapps/voting/voting.js';
-import { Membership_ } from '../../src/examples/zkapps/voting/membership.js';
-import { HelloWorld } from '../../src/examples/zkapps/hello-world/hello-world.js';
-import { TokenContract, createDex } from '../../src/examples/zkapps/dex/dex.js';
+import { Voting_ } from '../../src/examples/zkapps/voting/voting.ts';
+import { Membership_ } from '../../src/examples/zkapps/voting/membership.ts';
+import { HelloWorld } from '../../src/examples/zkapps/hello-world/hello-world.ts';
+import { TokenContract, createDex } from '../../src/examples/zkapps/dex/dex.ts';
 import {
   ecdsa,
   keccakAndEcdsa,
-} from '../../src/examples/crypto/ecdsa/ecdsa.js';
-import { SHA256Program } from '../../src/examples/crypto/sha256/sha256.js';
-import { GroupCS, BitwiseCS, HashCS } from './plain-constraint-system.js';
+} from '../../src/examples/crypto/ecdsa/ecdsa.ts';
+import { SHA256Program } from '../../src/examples/crypto/sha256/sha256.ts';
+import { GroupCS, BitwiseCS, HashCS } from './plain-constraint-system.ts';
 
 // toggle this for quick iteration when debugging vk regressions
 const skipVerificationKeys = false;
@@ -96,39 +96,38 @@ async function checkVk(contracts: typeof ConstraintSystems) {
         errorStack += `\n\nMethod digest mismatch for ${c.name}.${methodKey}()
   Actual
     ${JSON.stringify(
-      {
-        digest: actualMethod.digest,
-        rows: actualMethod.rows,
-      },
-      undefined,
-      2
-    )}
+          {
+            digest: actualMethod.digest,
+            rows: actualMethod.rows,
+          },
+          undefined,
+          2
+        )}
   \n
   Expected
     ${JSON.stringify(
-      {
-        digest: expectedMethod.digest,
-        rows: expectedMethod.rows,
-      },
-      undefined,
-      2
-    )}`;
+          {
+            digest: expectedMethod.digest,
+            rows: expectedMethod.rows,
+          },
+          undefined,
+          2
+        )}`;
       }
     }
 
     if (data !== vk.data || hash.toString() !== vk.hash) {
-      errorStack += `\n\nRegression test for contract ${
-        c.name
-      } failed, because of a verification key mismatch.
+      errorStack += `\n\nRegression test for contract ${c.name
+        } failed, because of a verification key mismatch.
 Contract has
   ${JSON.stringify(
-    {
-      data,
-      hash,
-    },
-    undefined,
-    2
-  )}
+          {
+            data,
+            hash,
+          },
+          undefined,
+          2
+        )}
 \n
 but expected was
   ${JSON.stringify(ref.verificationKey, undefined, 2)}`;

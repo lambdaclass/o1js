@@ -1,7 +1,7 @@
-import { fromBase58Check, toBase58Check } from './base58.js';
+import { fromBase58Check, toBase58Check } from './base58.ts';
 import { Test } from '../snarky.js';
 import { expect } from 'expect';
-import { test, Random, withHardCoded } from './testing/property.js';
+import { test, Random, withHardCoded } from './testing/property.ts';
 
 let bytes = withHardCoded(
   Random.bytes(Random.nat(100)),

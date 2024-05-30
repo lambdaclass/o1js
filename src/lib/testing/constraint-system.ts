@@ -5,14 +5,14 @@
  * variety of fieldvar types for the inputs: constants, variables, and combinators.
  */
 import { Gate, GateType } from '../../snarky.js';
-import { randomBytes } from '../../bindings/crypto/random.js';
-import { Field, FieldType, FieldVar } from '../field.js';
-import { Provable } from '../provable.js';
-import { Tuple } from '../util/types.js';
-import { Random } from './random.js';
-import { test } from './property.js';
-import { Undefined, ZkProgram } from '../proof-system.js';
-import { printGates } from '../provable-context.js';
+import { randomBytes } from '../../bindings/crypto/random.ts';
+import { Field, FieldType, FieldVar } from '../field.ts';
+import { Provable } from '../provable.ts';
+import { Tuple } from '../util/types.ts';
+import { Random } from './random.ts';
+import { test } from './property.ts';
+import { Undefined, ZkProgram } from '../proof-system.ts';
+import { printGates } from '../provable-context.ts';
 
 export {
   constraintSystem,

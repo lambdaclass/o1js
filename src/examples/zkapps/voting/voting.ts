@@ -15,12 +15,12 @@ import {
   TransactionVersion,
 } from 'o1js';
 
-import { Member } from './member.js';
+import { Member } from './member.ts';
 import {
   ElectionPreconditions,
   ParticipantPreconditions,
-} from './preconditions.js';
-import { Membership_ } from './membership.js';
+} from './preconditions.ts';
+import { Membership_ } from './membership.ts';
 
 /**
  * Address to the Membership instance that keeps track of Candidates.

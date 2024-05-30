@@ -1,4 +1,4 @@
-import { Secp256k1, Ecdsa, keccakAndEcdsa, ecdsa, Bytes32 } from './ecdsa.js';
+import { Secp256k1, Ecdsa, keccakAndEcdsa, ecdsa, Bytes32 } from './ecdsa.ts';
 import assert from 'assert';
 
 // create an example ecdsa signature

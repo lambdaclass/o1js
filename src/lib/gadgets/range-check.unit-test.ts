@@ -1,23 +1,23 @@
-import { mod } from '../../bindings/crypto/finite-field.js';
-import { Field } from '../../lib/core.js';
-import { ZkProgram } from '../proof-system.js';
+import { mod } from '../../bindings/crypto/finite-field.ts';
+import { Field } from '../../lib/core.ts';
+import { ZkProgram } from '../proof-system.ts';
 import {
   Spec,
   boolean,
   equivalentAsync,
   fieldWithRng,
-} from '../testing/equivalent.js';
-import { Random } from '../testing/property.js';
-import { assert } from './common.js';
-import { Gadgets } from './gadgets.js';
-import { l } from './range-check.js';
+} from '../testing/equivalent.ts';
+import { Random } from '../testing/property.ts';
+import { assert } from './common.ts';
+import { Gadgets } from './gadgets.ts';
+import { l } from './range-check.ts';
 import {
   constraintSystem,
   contains,
   equals,
   ifNotAllConstant,
   withoutGenerics,
-} from '../testing/constraint-system.js';
+} from '../testing/constraint-system.ts';
 
 let uint = (n: number | bigint): Spec<bigint, Field> => {
   let uint = Random.bignat((1n << BigInt(n)) - 1n);

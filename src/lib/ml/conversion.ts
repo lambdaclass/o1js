@@ -3,13 +3,13 @@
  */
 
 import type { MlPublicKey, MlPublicKeyVar } from '../../snarky.js';
-import { HashInput } from '../circuit-value.js';
-import { Bool, Field } from '../core.js';
-import { FieldConst, FieldVar } from '../field.js';
-import { Scalar, ScalarConst } from '../scalar.js';
-import { PrivateKey, PublicKey } from '../signature.js';
-import { MlPair, MlBool, MlArray } from './base.js';
-import { MlFieldConstArray } from './fields.js';
+import { HashInput } from '../circuit-value.ts';
+import { Bool, Field } from '../core.ts';
+import { FieldConst, FieldVar } from '../field.ts';
+import { Scalar, ScalarConst } from '../scalar.ts';
+import { PrivateKey, PublicKey } from '../signature.ts';
+import { MlPair, MlBool, MlArray } from './base.ts';
+import { MlFieldConstArray } from './fields.ts';
 
 export { Ml, MlHashInput };
 

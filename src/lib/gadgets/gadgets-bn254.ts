@@ -10,7 +10,7 @@ import {
   rangeCheckN,
   isInRangeN,
   rangeCheck8,
-} from './range-check-bn254.js';
+} from './range-check-bn254.ts';
 import {
   not,
   rotate32,
@@ -20,11 +20,11 @@ import {
   leftShift64,
   rightShift64,
   leftShift32,
-} from './bitwise.js';
-import { FieldBn254 } from '../core-bn254.js';
-import { ForeignFieldBn254, Field3, Sum } from './foreign-field-bn254.js';
-import { divMod32, addMod32 } from './arithmetic.js';
-import { SHA256 } from './sha256.js';
+} from './bitwise.ts';
+import { FieldBn254 } from '../core-bn254.ts';
+import { ForeignFieldBn254, Field3, Sum } from './foreign-field-bn254.ts';
+import { divMod32, addMod32 } from './arithmetic.ts';
+import { SHA256 } from './sha256.ts';
 
 export { GadgetsBn254 };
 

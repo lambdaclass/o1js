@@ -1,14 +1,14 @@
-import { ZkProgram } from '../proof-system.js';
+import { ZkProgram } from '../proof-system.ts';
 import {
   equivalentProvable as equivalent,
   equivalentAsync,
   field,
   record,
-} from '../testing/equivalent.js';
-import { Field } from '../core.js';
-import { Gadgets } from './gadgets.js';
-import { provable } from '../circuit-value.js';
-import { assert } from './common.js';
+} from '../testing/equivalent.ts';
+import { Field } from '../core.ts';
+import { Gadgets } from './gadgets.ts';
+import { provable } from '../circuit-value.ts';
+import { assert } from './common.ts';
 
 let Arithmetic = ZkProgram({
   name: 'arithmetic',

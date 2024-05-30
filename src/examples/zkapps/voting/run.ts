@@ -1,14 +1,14 @@
 import { Bool, PrivateKey, UInt32, UInt64 } from 'o1js';
-import { VotingApp, VotingAppParams } from './factory.js';
+import { VotingApp, VotingAppParams } from './factory.ts';
 import {
   ElectionPreconditions,
   ParticipantPreconditions,
-} from './preconditions.js';
+} from './preconditions.ts';
 
-import { OffchainStorage } from './off-chain-storage.js';
-import { Member } from './member.js';
-import { testSet } from './test.js';
-import { getProfiler } from '../../utils/profiler.js';
+import { OffchainStorage } from './off-chain-storage.ts';
+import { Member } from './member.ts';
+import { testSet } from './test.ts';
+import { getProfiler } from '../../utils/profiler.ts';
 
 console.log('Running Voting script...');
 

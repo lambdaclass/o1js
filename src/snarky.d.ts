@@ -1,7 +1,7 @@
-import type { Account as JsonAccount } from './bindings/mina-transaction/gen/transaction-json.js';
-import type { Field, FieldConst, FieldVar, VarFieldVar } from './lib/field.js';
-import type { BoolVar, Bool } from './lib/bool.js';
-import type { ScalarConst } from './lib/scalar.js';
+import type { Account as JsonAccount } from './bindings/mina-transaction/gen/transaction-json.ts';
+import type { Field, FieldConst, FieldVar, VarFieldVar } from './lib/field.ts';
+import type { BoolVar, Bool } from './lib/bool.ts';
+import type { ScalarConst } from './lib/scalar.ts';
 import type {
   MlArray,
   MlPair,
@@ -13,14 +13,14 @@ import type {
   MlUnit,
   MlString,
   MlTuple,
-} from './lib/ml/base.js';
-import type { MlHashInput } from './lib/ml/conversion.js';
+} from './lib/ml/base.ts';
+import type { MlHashInput } from './lib/ml/conversion.ts';
 import type {
   SnarkKey,
   SnarkKeyHeader,
   MlWrapVerificationKey,
-} from './lib/proof-system/prover-keys.js';
-import { getWasm } from './bindings/js/wrapper.js';
+} from './lib/proof-system/prover-keys.ts';
+import { getWasm } from './bindings/js/wrapper.ts';
 import type {
   WasmFpSrs,
   WasmFqSrs,
@@ -41,7 +41,7 @@ export {
 };
 
 // Bn254
-import type { FieldBn254 } from './lib/field-bn254.js';
+import type { FieldBn254 } from './lib/field-bn254.ts';
 export { ProvableBn254, ProvablePureBn254 };
 
 /**

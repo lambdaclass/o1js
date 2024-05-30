@@ -10,13 +10,13 @@ import {
   Reducer,
   Bool,
 } from 'o1js';
-import { VotingApp, VotingAppParams } from './factory.js';
-import { Member, MyMerkleWitness } from './member.js';
-import { OffchainStorage } from './off-chain-storage.js';
+import { VotingApp, VotingAppParams } from './factory.ts';
+import { Member, MyMerkleWitness } from './member.ts';
+import { OffchainStorage } from './off-chain-storage.ts';
 import {
   ParticipantPreconditions,
   ElectionPreconditions,
-} from './preconditions.js';
+} from './preconditions.ts';
 
 let Local = Mina.LocalBlockchain({
   proofsEnabled: false,

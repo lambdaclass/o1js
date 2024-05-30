@@ -1,13 +1,13 @@
-import { HashInput, ProvableExtendedBn254, Struct } from './circuit-value-bn254.js';
+import { HashInput, ProvableExtendedBn254, Struct } from './circuit-value-bn254.ts';
 import { Snarky } from '../snarky.js';
-import { FieldBn254 } from './core-bn254.js';
-import { createHashHelpers } from './hash-generic.js';
-import { ProvableBn254 } from './provable-bn254.js';
-import { MlFieldArray } from './ml/fields-bn254.js';
-import { PoseidonBn254 as PoseidonBigint } from '../bindings/crypto/poseidon.js';
-import { assert } from './errors.js';
-import { rangeCheckN } from './gadgets/range-check-bn254.js';
-import { TupleN } from './util/types.js';
+import { FieldBn254 } from './core-bn254.ts';
+import { createHashHelpers } from './hash-generic.ts';
+import { ProvableBn254 } from './provable-bn254.ts';
+import { MlFieldArray } from './ml/fields-bn254.ts';
+import { PoseidonBn254 as PoseidonBigint } from '../bindings/crypto/poseidon.ts';
+import { assert } from './errors.ts';
+import { rangeCheckN } from './gadgets/range-check-bn254.ts';
+import { TupleN } from './util/types.ts';
 
 // external API
 export { Poseidon, TokenSymbol };

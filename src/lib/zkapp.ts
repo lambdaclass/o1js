@@ -1,5 +1,5 @@
 import { Gate, Pickles, ProvablePure } from '../snarky.js';
-import { Field, Bool } from './core.js';
+import { Field, Bool } from './core.ts';
 import {
   AccountUpdate,
   Authorization,
@@ -16,29 +16,29 @@ import {
   AccountUpdateForest,
   AccountUpdateLayout,
   AccountUpdateTree,
-} from './account-update.js';
+} from './account-update.ts';
 import {
   cloneCircuitValue,
   FlexibleProvablePure,
   InferProvable,
   provable,
   toConstant,
-} from './circuit-value.js';
-import { Provable, getBlindingValue, memoizationContext } from './provable.js';
-import * as Encoding from '../bindings/lib/encoding.js';
+} from './circuit-value.ts';
+import { Provable, getBlindingValue, memoizationContext } from './provable.ts';
+import * as Encoding from '../bindings/lib/encoding.ts';
 import {
   HashInput,
   Poseidon,
   hashConstant,
   isHashable,
   packToFields,
-} from './hash.js';
-import { UInt32, UInt64 } from './int.js';
-import * as Mina from './mina.js';
+} from './hash.ts';
+import { UInt32, UInt64 } from './int.ts';
+import * as Mina from './mina.ts';
 import {
   assertPreconditionInvariants,
   cleanPreconditionsCache,
-} from './precondition.js';
+} from './precondition.ts';
 import {
   analyzeMethod,
   compileProgram,
@@ -51,27 +51,27 @@ import {
   MethodInterface,
   Proof,
   sortMethodArguments,
-} from './proof-system.js';
-import { PrivateKey, PublicKey } from './signature.js';
-import { assertStatePrecondition, cleanStatePrecondition } from './state.js';
+} from './proof-system.ts';
+import { PrivateKey, PublicKey } from './signature.ts';
+import { assertStatePrecondition, cleanStatePrecondition } from './state.ts';
 import {
   inAnalyze,
   inCheckedComputation,
   inCompile,
   inProver,
   snarkContext,
-} from './provable-context.js';
-import { Cache } from './proof-system/cache.js';
-import { assert } from './gadgets/common.js';
-import { SmartContractBase } from './mina/smart-contract-base.js';
-import { ZkappStateLength } from './mina/mina-instance.js';
+} from './provable-context.ts';
+import { Cache } from './proof-system/cache.ts';
+import { assert } from './gadgets/common.ts';
+import { SmartContractBase } from './mina/smart-contract-base.ts';
+import { ZkappStateLength } from './mina/mina-instance.ts';
 import {
   SmartContractContext,
   accountUpdateLayout,
   smartContractContext,
-} from './mina/smart-contract-context.js';
-import { deprecatedToken } from './mina/token/token-methods.js';
-import type { TokenContract } from './mina/token/token-contract.js';
+} from './mina/smart-contract-context.ts';
+import { deprecatedToken } from './mina/token/token-methods.ts';
+import type { TokenContract } from './mina/token/token-contract.ts';
 
 // external API
 export { SmartContract, method, DeployArgs, declareMethods, Account, Reducer };
@@ -677,7 +677,7 @@ class SmartContract extends SmartContractBase {
       } else {
         throw Error(
           `\`${this.constructor.name}.deploy()\` was called but no verification key was found.\n` +
-            `Try calling \`await ${this.constructor.name}.compile()\` first, this will cache the verification key in the background.`
+          `Try calling \`await ${this.constructor.name}.compile()\` first, this will cache the verification key in the background.`
         );
       }
     }
@@ -937,16 +937,15 @@ super.init();
     if (eventTypes.length === 0)
       throw Error(
         'emitEvent: You are trying to emit an event without having declared the types of your events.\n' +
-          `Make sure to add a property \`events\` on ${this.constructor.name}, for example: \n` +
-          `class ${this.constructor.name} extends SmartContract {\n` +
-          `  events = { 'my-event': Field }\n` +
-          `}`
+        `Make sure to add a property \`events\` on ${this.constructor.name}, for example: \n` +
+        `class ${this.constructor.name} extends SmartContract {\n` +
+        `  events = { 'my-event': Field }\n` +
+        `}`
       );
     let eventNumber = eventTypes.sort().indexOf(type as string);
     if (eventNumber === -1)
       throw Error(
-        `emitEvent: Unknown event type "${
-          type as string
+        `emitEvent: Unknown event type "${type as string
         }". The declared event types are: ${eventTypes.join(', ')}.`
       );
     let eventType = (this.events as this['events'])[type];
@@ -1011,7 +1010,7 @@ super.init();
         return end === undefined
           ? start.lessThanOrEqual(height).toBoolean()
           : start.lessThanOrEqual(height).toBoolean() &&
-              height.lessThanOrEqual(end).toBoolean();
+          height.lessThanOrEqual(end).toBoolean();
       })
       .map((event) => {
         return event.events.map((eventData) => {
@@ -1261,7 +1260,7 @@ function getReducer<A>(contract: SmartContract): ReducerReturn<A> {
   if (reducer === undefined)
     throw Error(
       'You are trying to use a reducer without having declared its type.\n' +
-        `Make sure to add a property \`reducer\` on ${contract.constructor.name}, for example:
+      `Make sure to add a property \`reducer\` on ${contract.constructor.name}, for example:
 class ${contract.constructor.name} extends SmartContract {
   reducer = { actionType: Field };
 }`
@@ -1442,9 +1441,9 @@ const SmartContractContext = {
 
 type DeployArgs =
   | {
-      verificationKey?: { data: string; hash: string | Field };
-      zkappKey?: PrivateKey;
-    }
+    verificationKey?: { data: string; hash: string | Field };
+    zkappKey?: PrivateKey;
+  }
   | undefined;
 
 function Account(address: PublicKey, tokenId?: Field) {

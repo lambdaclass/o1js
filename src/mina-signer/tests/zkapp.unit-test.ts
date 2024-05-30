@@ -1,12 +1,12 @@
-import { ZkappCommand } from '../../bindings/mina-transaction/gen/transaction-bigint.js';
-import * as TransactionJson from '../../bindings/mina-transaction/gen/transaction-json.js';
-import Client from '../mina-signer.js';
-import { accountUpdateExample } from '../src/test-vectors/accountUpdate.js';
+import { ZkappCommand } from '../../bindings/mina-transaction/gen/transaction-bigint.ts';
+import * as TransactionJson from '../../bindings/mina-transaction/gen/transaction-json.ts';
+import Client from '../mina-signer.ts';
+import { accountUpdateExample } from '../src/test-vectors/accountUpdate.ts';
 import { expect } from 'expect';
-import { Transaction } from '../../lib/mina.js';
-import { PrivateKey } from '../../lib/signature.js';
-import { Signature } from '../src/signature.js';
-import { mocks } from '../../bindings/crypto/constants.js';
+import { Transaction } from '../../lib/mina.ts';
+import { PrivateKey } from '../../lib/signature.ts';
+import { Signature } from '../src/signature.ts';
+import { mocks } from '../../bindings/crypto/constants.ts';
 
 const client = new Client({ network: 'testnet' });
 let { publicKey, privateKey } = client.genKeys();

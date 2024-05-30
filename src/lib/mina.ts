@@ -1,14 +1,14 @@
 import { Test } from '../snarky.js';
-import { Field } from './core.js';
-import { UInt32, UInt64 } from './int.js';
-import { PublicKey } from './signature.js';
-import { ZkappCommand, TokenId, Authorization } from './account-update.js';
-import * as Fetch from './fetch.js';
-import { invalidTransactionError } from './mina/errors.js';
-import { Types } from '../bindings/mina-transaction/types.js';
-import { Account } from './mina/account.js';
-import { NetworkId } from '../mina-signer/src/types.js';
-import { currentTransaction } from './mina/transaction-context.js';
+import { Field } from './core.ts';
+import { UInt32, UInt64 } from './int.ts';
+import { PublicKey } from './signature.ts';
+import { ZkappCommand, TokenId, Authorization } from './account-update.ts';
+import * as Fetch from './fetch.ts';
+import { invalidTransactionError } from './mina/errors.ts';
+import { Types } from '../bindings/mina-transaction/types.ts';
+import { Account } from './mina/account.ts';
+import { NetworkId } from '../mina-signer/src/types.ts';
+import { currentTransaction } from './mina/transaction-context.ts';
 import {
   type FeePayerSpec,
   type DeprecatedFeePayerSpec,
@@ -30,8 +30,8 @@ import {
   fetchActions,
   getActions,
   getProofsEnabled,
-} from './mina/mina-instance.js';
-import { type EventActionFilterOptions } from './mina/graphql.js';
+} from './mina/mina-instance.ts';
+import { type EventActionFilterOptions } from './mina/graphql.ts';
 import {
   type Transaction,
   type PendingTransaction,
@@ -41,14 +41,14 @@ import {
   newTransaction,
   transaction,
   createIncludedOrRejectedTransaction,
-} from './mina/transaction.js';
+} from './mina/transaction.ts';
 import {
   reportGetAccountError,
   verifyTransactionLimits,
   defaultNetworkState,
   filterGroups,
-} from './mina/transaction-validation.js';
-import { LocalBlockchain } from './mina/local-blockchain.js';
+} from './mina/transaction-validation.ts';
+import { LocalBlockchain } from './mina/local-blockchain.ts';
 
 export {
   BerkeleyQANet,
@@ -112,11 +112,11 @@ function Network(options: {
 function Network(
   options:
     | {
-        networkId?: NetworkId;
-        mina: string | string[];
-        archive?: string | string[];
-        lightnetAccountManager?: string;
-      }
+      networkId?: NetworkId;
+      mina: string | string[];
+      archive?: string | string[];
+      lightnetAccountManager?: string;
+    }
     | string
 ): Mina {
   let minaNetworkId: NetworkId = 'testnet';

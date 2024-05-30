@@ -1,7 +1,7 @@
-import { createNullifier } from '../mina-signer/src/nullifier.js';
-import { Field } from './core.js';
-import { Nullifier } from './nullifier.js';
-import { PrivateKey } from './signature.js';
+import { createNullifier } from '../mina-signer/src/nullifier.ts';
+import { Field } from './core.ts';
+import { Nullifier } from './nullifier.ts';
+import { PrivateKey } from './signature.ts';
 
 let priv = PrivateKey.random();
 

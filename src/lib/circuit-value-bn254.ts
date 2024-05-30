@@ -1,23 +1,23 @@
 import 'reflect-metadata';
 import { ProvablePureBn254, Snarky } from '../snarky.js';
-import { FieldBn254, BoolBn254 } from './core-bn254.js';
+import { FieldBn254, BoolBn254 } from './core-bn254.ts';
 import {
   provable,
   provablePure,
   provableTuple,
   HashInput,
   NonMethods,
-} from '../bindings/lib/provable-snarky-bn254.js';
+} from '../bindings/lib/provable-snarky-bn254.ts';
 import type {
   InferJson,
   InferProvable,
   InferredProvable,
   IsPure,
-} from '../bindings/lib/provable-snarky-bn254.js';
-import { ProvableBn254 } from './provable-bn254.js';
-import { assert } from './errors.js';
-import { inCheckedComputation } from './provable-context-bn254.js';
-import { Proof } from './proof-system.js';
+} from '../bindings/lib/provable-snarky-bn254.ts';
+import { ProvableBn254 } from './provable-bn254.ts';
+import { assert } from './errors.ts';
+import { inCheckedComputation } from './provable-context-bn254.ts';
+import { Proof } from './proof-system.ts';
 
 // external API
 export {

@@ -6,18 +6,18 @@ import {
   signFieldElement,
   verify,
   verifyFieldElement,
-} from './signature.js';
+} from './signature.ts';
 import { Ledger, Test } from '../../snarky.js';
-import { Field as FieldSnarky } from '../../lib/core.js';
-import { Field } from '../../provable/field-bigint.js';
-import { PrivateKey, PublicKey } from '../../provable/curve-bigint.js';
-import { PrivateKey as PrivateKeySnarky } from '../../lib/signature.js';
-import { p } from '../../bindings/crypto/finite-field.js';
-import { AccountUpdate } from '../../bindings/mina-transaction/gen/transaction-bigint.js';
-import { HashInput } from '../../bindings/lib/provable-bigint.js';
-import { Ml } from '../../lib/ml/conversion.js';
-import { FieldConst } from '../../lib/field.js';
-import { NetworkId } from './types.js';
+import { Field as FieldSnarky } from '../../lib/core.ts';
+import { Field } from '../../provable/field-bigint.ts';
+import { PrivateKey, PublicKey } from '../../provable/curve-bigint.ts';
+import { PrivateKey as PrivateKeySnarky } from '../../lib/signature.ts';
+import { p } from '../../bindings/crypto/finite-field.ts';
+import { AccountUpdate } from '../../bindings/mina-transaction/gen/transaction-bigint.ts';
+import { HashInput } from '../../bindings/lib/provable-bigint.ts';
+import { Ml } from '../../lib/ml/conversion.ts';
+import { FieldConst } from '../../lib/field.ts';
+import { NetworkId } from './types.ts';
 
 // check consistency with OCaml, where we expose the function to sign 1 field element with "testnet"
 function checkConsistentSingle(

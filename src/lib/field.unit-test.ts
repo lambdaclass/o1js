@@ -1,12 +1,12 @@
 import { ProvablePure } from '../snarky.js';
-import { Field } from './core.js';
-import { Field as Fp } from '../provable/field-bigint.js';
-import { test, Random } from './testing/property.js';
+import { Field } from './core.ts';
+import { Field as Fp } from '../provable/field-bigint.ts';
+import { test, Random } from './testing/property.ts';
 import { deepEqual, throws } from 'node:assert/strict';
-import { Provable } from './provable.js';
-import { Binable } from '../bindings/lib/binable.js';
-import { ProvableExtended } from './circuit-value.js';
-import { FieldType } from './field.js';
+import { Provable } from './provable.ts';
+import { Binable } from '../bindings/lib/binable.ts';
+import { ProvableExtended } from './circuit-value.ts';
+import { FieldType } from './field.ts';
 import {
   equivalentProvable as equivalent,
   oneOf,
@@ -16,7 +16,7 @@ import {
   unit,
   bool,
   Spec,
-} from './testing/equivalent.js';
+} from './testing/equivalent.ts';
 
 // types
 Field satisfies Provable<Field>;

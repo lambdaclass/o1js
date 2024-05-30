@@ -1,4 +1,4 @@
-import { Bool, Field, UInt32, UInt64 } from '../../provable/field-bigint.js';
+import { Bool, Field, UInt32, UInt64 } from '../../provable/field-bigint.ts';
 import {
   Binable,
   BinableString,
@@ -9,7 +9,7 @@ import {
   record,
   stringToBytes,
   withVersionNumber,
-} from '../../bindings/lib/binable.js';
+} from '../../bindings/lib/binable.ts';
 import {
   Common,
   Delegation,
@@ -20,12 +20,12 @@ import {
   DelegationJson,
   delegationFromJson,
   paymentFromJson,
-} from './sign-legacy.js';
-import { PublicKey, Scalar } from '../../provable/curve-bigint.js';
-import { Signature, SignatureJson } from './signature.js';
-import { blake2b } from 'blakejs';
-import { base58, withBase58 } from '../../lib/base58.js';
-import { versionBytes } from '../../bindings/crypto/constants.js';
+} from './sign-legacy.ts';
+import { PublicKey, Scalar } from '../../provable/curve-bigint.ts';
+import { Signature, SignatureJson } from './signature.ts';
+import { blake2b } from 'npm:blakejs';
+import { base58, withBase58 } from '../../lib/base58.ts';
+import { versionBytes } from '../../bindings/crypto/constants.ts';
 
 export {
   hashPayment,

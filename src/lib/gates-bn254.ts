@@ -1,8 +1,8 @@
 import { Snarky } from '../snarky.js';
-import { FieldConst, type FieldBn254 } from './field-bn254.js';
-import { exists } from './gadgets/common-bn254.js';
-import { MlArray, MlTuple } from './ml/base.js';
-import { TupleN } from './util/types.js';
+import { FieldConst, type FieldBn254 } from './field-bn254.ts';
+import { exists } from './gadgets/common-bn254.ts';
+import { MlArray, MlTuple } from './ml/base.ts';
+import { TupleN } from './util/types.ts';
 
 export {
   GatesBn254,

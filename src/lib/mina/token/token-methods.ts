@@ -1,9 +1,9 @@
-import { AccountUpdate, Authorization, TokenId } from '../../account-update.js';
-import { isSmartContract } from '../smart-contract-base.js';
-import { PublicKey } from '../../signature.js';
-import type { SmartContract } from '../../zkapp.js';
-import { UInt64 } from '../../int.js';
-import { Bool, Field } from '../../core.js';
+import { AccountUpdate, Authorization, TokenId } from '../../account-update.ts';
+import { isSmartContract } from '../smart-contract-base.ts';
+import { PublicKey } from '../../signature.ts';
+import type { SmartContract } from '../../zkapp.ts';
+import { UInt64 } from '../../int.ts';
+import { Bool, Field } from '../../core.ts';
 
 export { tokenMethods, deprecatedToken };
 

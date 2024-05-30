@@ -1,12 +1,12 @@
 import { Ledger, Test } from '../../snarky.js';
-import { Random, test } from '../testing/property.js';
-import { Field, Bool } from '../core.js';
-import { PrivateKey, PublicKey } from '../signature.js';
-import { TokenId, dummySignature } from '../account-update.js';
-import { Ml } from './conversion.js';
+import { Random, test } from '../testing/property.ts';
+import { Field, Bool } from '../core.ts';
+import { PrivateKey, PublicKey } from '../signature.ts';
+import { TokenId, dummySignature } from '../account-update.ts';
+import { Ml } from './conversion.ts';
 import { expect } from 'expect';
-import { FieldConst } from '../field.js';
-import { Provable } from '../provable.js';
+import { FieldConst } from '../field.ts';
+import { Provable } from '../provable.ts';
 
 // PrivateKey.toBase58, fromBase58
 

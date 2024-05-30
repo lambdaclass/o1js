@@ -1,34 +1,34 @@
 import { expect } from 'expect';
-import { mocks } from '../../bindings/crypto/constants.js';
+import { mocks } from '../../bindings/crypto/constants.ts';
 import {
   AccountUpdate,
   Field,
   Json,
   ZkappCommand,
-} from '../../bindings/mina-transaction/gen/transaction-bigint.js';
-import * as TypesSnarky from '../../bindings/mina-transaction/gen/transaction.js';
+} from '../../bindings/mina-transaction/gen/transaction-bigint.ts';
+import * as TypesSnarky from '../../bindings/mina-transaction/gen/transaction.ts';
 import {
   AccountUpdate as AccountUpdateSnarky,
   ZkappCommand as ZkappCommandSnarky,
-} from '../../lib/account-update.js';
-import { FieldConst } from '../../lib/field.js';
-import { packToFields as packToFieldsSnarky } from '../../lib/hash.js';
-import { Network, setActiveInstance } from '../../lib/mina.js';
-import { Ml, MlHashInput } from '../../lib/ml/conversion.js';
+} from '../../lib/account-update.ts';
+import { FieldConst } from '../../lib/field.ts';
+import { packToFields as packToFieldsSnarky } from '../../lib/hash.ts';
+import { Network, setActiveInstance } from '../../lib/mina.ts';
+import { Ml, MlHashInput } from '../../lib/ml/conversion.ts';
 import {
   PrivateKey as PrivateKeySnarky,
   PublicKey as PublicKeySnarky,
-} from '../../lib/signature.js';
-import { Random, test, withHardCoded } from '../../lib/testing/property.js';
-import { PrivateKey, PublicKey } from '../../provable/curve-bigint.js';
+} from '../../lib/signature.ts';
+import { Random, test, withHardCoded } from '../../lib/testing/property.ts';
+import { PrivateKey, PublicKey } from '../../provable/curve-bigint.ts';
 import {
   hashWithPrefix,
   packToFields,
   prefixes,
-} from '../../provable/poseidon-bigint.js';
+} from '../../provable/poseidon-bigint.ts';
 import { Pickles, Test } from '../../snarky.js';
-import { Memo } from './memo.js';
-import { RandomTransaction } from './random-transaction.js';
+import { Memo } from './memo.ts';
+import { RandomTransaction } from './random-transaction.ts';
 import {
   accountUpdateFromFeePayer,
   accountUpdateHash,
@@ -38,13 +38,13 @@ import {
   isCallDepthValid,
   signZkappCommand,
   verifyZkappCommandSignature,
-} from './sign-zkapp-command.js';
+} from './sign-zkapp-command.ts';
 import {
   Signature,
   signFieldElement,
   verifyFieldElement,
-} from './signature.js';
-import { NetworkId } from './types.js';
+} from './signature.ts';
+import { NetworkId } from './types.ts';
 
 // monkey-patch bigint to json
 (BigInt.prototype as any).toJSON = function () {

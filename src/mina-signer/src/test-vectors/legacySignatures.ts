@@ -1,4 +1,4 @@
-import { DelegationJson, PaymentJson } from '../sign-legacy.js';
+import { DelegationJson, PaymentJson } from '../sign-legacy.ts';
 
 // inputs and generated signatures from client_sdk/tests/test_signatures.js
 export { signatures, payments, delegations, strings, keypair };

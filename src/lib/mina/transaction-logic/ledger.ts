@@ -1,12 +1,12 @@
 /**
  * A ledger of accounts - simple model of a local blockchain.
  */
-import { PublicKey } from '../../signature.js';
-import type { AccountUpdate } from '../../account-update.js';
-import { Account, newAccount } from '../account.js';
-import { Field } from '../../field.js';
-import { applyAccountUpdate } from './apply.js';
-import { Types } from '../../../bindings/mina-transaction/types.js';
+import { PublicKey } from '../../signature.ts';
+import type { AccountUpdate } from '../../account-update.ts';
+import { Account, newAccount } from '../account.ts';
+import { Field } from '../../field.ts';
+import { applyAccountUpdate } from './apply.ts';
+import { Types } from '../../../bindings/mina-transaction/types.ts';
 
 export { SimpleLedger };
 

@@ -8,7 +8,7 @@ import {
   SignedLegacy,
   userCommandToEnum,
   userCommandToV1,
-} from './transaction-hash.js';
+} from './transaction-hash.ts';
 import {
   PaymentJson,
   PaymentJsonV1,
@@ -18,14 +18,14 @@ import {
   DelegationJson,
   DelegationJsonV1,
   delegationFromJson,
-} from './sign-legacy.js';
-import { Signature, SignatureJson } from './signature.js';
-import { PublicKey } from '../../provable/curve-bigint.js';
-import { Memo } from './memo.js';
+} from './sign-legacy.ts';
+import { Signature, SignatureJson } from './signature.ts';
+import { PublicKey } from '../../provable/curve-bigint.ts';
+import { Memo } from './memo.ts';
 import { expect } from 'expect';
-import { versionBytes } from '../../bindings/crypto/constants.js';
-import { test } from '../../lib/testing/property.js';
-import { RandomTransaction } from './random-transaction.js';
+import { versionBytes } from '../../bindings/crypto/constants.ts';
+import { test } from '../../lib/testing/property.ts';
+import { RandomTransaction } from './random-transaction.ts';
 
 test(
   RandomTransaction.signedPayment,

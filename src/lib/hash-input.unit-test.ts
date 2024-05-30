@@ -5,17 +5,17 @@ import {
   Permissions,
   shutdown,
   ProvableExtended,
-} from '../index.js';
+} from '../index.ts';
 import { expect } from 'expect';
-import { jsLayout } from '../bindings/mina-transaction/gen/js-layout.js';
+import { jsLayout } from '../bindings/mina-transaction/gen/js-layout.ts';
 import {
   Json,
   provableFromLayout,
-} from '../bindings/mina-transaction/gen/transaction.js';
-import { packToFields } from './hash.js';
-import { Random, test } from './testing/property.js';
-import { MlHashInput } from './ml/conversion.js';
-import { MlFieldConstArray } from './ml/fields.js';
+} from '../bindings/mina-transaction/gen/transaction.ts';
+import { packToFields } from './hash.ts';
+import { Random, test } from './testing/property.ts';
+import { MlHashInput } from './ml/conversion.ts';
+import { MlFieldConstArray } from './ml/fields.ts';
 import { Test } from '../snarky.js';
 
 let { hashInputFromJson } = Test;

@@ -1,8 +1,8 @@
-import { Field, FieldConst, FieldVar, VarField } from '../field.js';
-import { Tuple, TupleN } from '../util/types.js';
+import { Field, FieldConst, FieldVar, VarField } from '../field.ts';
+import { Tuple, TupleN } from '../util/types.ts';
 import { Snarky } from '../../snarky.js';
-import { MlArray } from '../ml/base.js';
-import { Bool } from '../bool.js';
+import { MlArray } from '../ml/base.ts';
+import { Bool } from '../bool.ts';
 
 const MAX_BITS = 64 as const;
 

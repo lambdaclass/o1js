@@ -3,12 +3,12 @@ import {
   HashInput,
   ProvableExtended,
   Unconstrained,
-} from '../circuit-value.js';
-import { Field } from '../field.js';
-import { assert } from '../gadgets/common.js';
-import { Poseidon, ProvableHashable, packToFields } from '../hash.js';
-import { Provable } from '../provable.js';
-import { fields, modifiedField } from './fields.js';
+} from '../circuit-value.ts';
+import { Field } from '../field.ts';
+import { assert } from '../gadgets/common.ts';
+import { Poseidon, ProvableHashable, packToFields } from '../hash.ts';
+import { Provable } from '../provable.ts';
+import { fields, modifiedField } from './fields.ts';
 
 export { Packed, Hashed };
 

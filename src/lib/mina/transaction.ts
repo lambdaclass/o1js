@@ -7,24 +7,24 @@ import {
   addMissingSignatures,
   TokenId,
   addMissingProofs,
-} from '../account-update.js';
-import { prettifyStacktrace } from '../errors.js';
-import { Field } from '../core.js';
-import { PrivateKey, PublicKey } from '../signature.js';
-import { UInt32, UInt64 } from '../int.js';
-import { Empty, Proof } from '../proof-system.js';
-import { currentTransaction } from './transaction-context.js';
-import { Provable } from '../provable.js';
-import { assertPreconditionInvariants } from '../precondition.js';
-import { Account } from './account.js';
+} from '../account-update.ts';
+import { prettifyStacktrace } from '../errors.ts';
+import { Field } from '../core.ts';
+import { PrivateKey, PublicKey } from '../signature.ts';
+import { UInt32, UInt64 } from '../int.ts';
+import { Empty, Proof } from '../proof-system.ts';
+import { currentTransaction } from './transaction-context.ts';
+import { Provable } from '../provable.ts';
+import { assertPreconditionInvariants } from '../precondition.ts';
+import { Account } from './account.ts';
 import {
   type DeprecatedFeePayerSpec,
   type FeePayerSpec,
   activeInstance,
-} from './mina-instance.js';
-import * as Fetch from '../fetch.js';
-import { type SendZkAppResponse, sendZkappQuery } from './graphql.js';
-import { type FetchMode } from './transaction-context.js';
+} from './mina-instance.ts';
+import * as Fetch from '../fetch.ts';
+import { type SendZkAppResponse, sendZkappQuery } from './graphql.ts';
+import { type FetchMode } from './transaction-context.ts';
 
 export {
   type Transaction,

@@ -1,10 +1,10 @@
-import { Field } from './field.js';
-import { Gadgets } from './gadgets/gadgets.js';
-import { assert } from './errors.js';
-import { FlexibleBytes } from './provable-types/bytes.js';
-import { UInt8 } from './int.js';
-import { Bytes } from './provable-types/provable-types.js';
-import { bytesToWords, wordsToBytes } from './gadgets/bit-slices.js';
+import { Field } from './field.ts';
+import { Gadgets } from './gadgets/gadgets.ts';
+import { assert } from './errors.ts';
+import { FlexibleBytes } from './provable-types/bytes.ts';
+import { UInt8 } from './int.ts';
+import { Bytes } from './provable-types/provable-types.ts';
+import { bytesToWords, wordsToBytes } from './gadgets/bit-slices.ts';
 
 export { Keccak };
 
@@ -497,9 +497,9 @@ const State = {
 
 // AUXILIARY TYPES
 
-class Bytes32 extends Bytes(32) {}
-class Bytes48 extends Bytes(48) {}
-class Bytes64 extends Bytes(64) {}
+class Bytes32 extends Bytes(32) { }
+class Bytes48 extends Bytes(48) { }
+class Bytes64 extends Bytes(64) { }
 
 const BytesOfBitlength = {
   256: Bytes32,

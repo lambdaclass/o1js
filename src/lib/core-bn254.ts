@@ -1,5 +1,5 @@
-import { FieldBn254 as InternalField } from './field-bn254.js';
-import { BoolBn254 as InternalBool } from './bool-bn254.js';
+import { FieldBn254 as InternalField } from './field-bn254.ts';
+import { BoolBn254 as InternalBool } from './bool-bn254.ts';
 
 export { FieldBn254, BoolBn254 };
 

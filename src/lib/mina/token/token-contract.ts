@@ -1,17 +1,17 @@
-import { Bool } from '../../core.js';
-import { UInt64, Int64 } from '../../int.js';
-import { Provable } from '../../provable.js';
-import { PublicKey } from '../../signature.js';
+import { Bool } from '../../core.ts';
+import { UInt64, Int64 } from '../../int.ts';
+import { Provable } from '../../provable.ts';
+import { PublicKey } from '../../signature.ts';
 import {
   AccountUpdate,
   AccountUpdateForest,
   AccountUpdateTree,
   Permissions,
   TokenId,
-} from '../../account-update.js';
-import { DeployArgs, SmartContract } from '../../zkapp.js';
-import { TokenAccountUpdateIterator } from './forest-iterator.js';
-import { tokenMethods } from './token-methods.js';
+} from '../../account-update.ts';
+import { DeployArgs, SmartContract } from '../../zkapp.ts';
+import { TokenAccountUpdateIterator } from './forest-iterator.ts';
+import { tokenMethods } from './token-methods.ts';
 
 export { TokenContract };
 
@@ -105,7 +105,7 @@ abstract class TokenContract extends SmartContract {
     // prove that we checked all updates
     iterator.assertFinished(
       `Number of account updates to approve exceed ` +
-        `the supported limit of ${MAX_ACCOUNT_UPDATES}.\n`
+      `the supported limit of ${MAX_ACCOUNT_UPDATES}.\n`
     );
 
     // skip hashing our child account updates in the method wrapper

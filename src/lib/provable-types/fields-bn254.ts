@@ -1,5 +1,5 @@
-import { ProvablePureExtendedBn254 } from '../circuit-value-bn254.js';
-import { FieldBn254 } from '../field-bn254.js';
+import { ProvablePureExtendedBn254 } from '../circuit-value-bn254.ts';
+import { FieldBn254 } from '../field-bn254.ts';
 
 export { modifiedField, fields };
 

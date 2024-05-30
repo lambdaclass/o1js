@@ -1,38 +1,38 @@
-import { SimpleLedger } from './transaction-logic/ledger.js';
-import { Ml } from '../ml/conversion.js';
-import { transactionCommitments } from '../../mina-signer/src/sign-zkapp-command.js';
+import { SimpleLedger } from './transaction-logic/ledger.ts';
+import { Ml } from '../ml/conversion.ts';
+import { transactionCommitments } from '../../mina-signer/src/sign-zkapp-command.ts';
 import { Ledger, Test } from '../../snarky.js';
-import { Field } from '../core.js';
-import { UInt32, UInt64 } from '../int.js';
-import { PrivateKey, PublicKey } from '../signature.js';
-import { Account } from './account.js';
+import { Field } from '../core.ts';
+import { UInt32, UInt64 } from '../int.ts';
+import { PrivateKey, PublicKey } from '../signature.ts';
+import { Account } from './account.ts';
 import {
   ZkappCommand,
   TokenId,
   Authorization,
   Actions,
-} from '../account-update.js';
-import { NetworkId } from '../../mina-signer/src/types.js';
-import { Types, TypesBigint } from '../../bindings/mina-transaction/types.js';
-import { invalidTransactionError } from './errors.js';
+} from '../account-update.ts';
+import { NetworkId } from '../../mina-signer/src/types.ts';
+import { Types, TypesBigint } from '../../bindings/mina-transaction/types.ts';
+import { invalidTransactionError } from './errors.ts';
 import {
   Transaction,
   PendingTransaction,
   createIncludedOrRejectedTransaction,
   createTransaction,
-} from './transaction.js';
+} from './transaction.ts';
 import {
   type DeprecatedFeePayerSpec,
   type ActionStates,
   Mina,
   defaultNetworkConstants,
-} from './mina-instance.js';
+} from './mina-instance.ts';
 import {
   reportGetAccountError,
   defaultNetworkState,
   verifyTransactionLimits,
   verifyAccountUpdate,
-} from './transaction-validation.js';
+} from './transaction-validation.ts';
 
 export { LocalBlockchain };
 /**

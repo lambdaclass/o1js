@@ -1,14 +1,14 @@
-import { provableFromClass } from '../../bindings/lib/provable-snarky-bn254.js';
+import { provableFromClass } from '../../bindings/lib/provable-snarky-bn254.ts';
 import {
   HashInput,
   ProvableExtendedBn254,
   Unconstrained,
-} from '../circuit-value-bn254.js';
-import { FieldBn254 } from '../field-bn254.js';
-import { assert } from '../gadgets/common-bn254.js';
-import { Poseidon, ProvableHashable, packToFields } from '../hash-bn254.js';
-import { ProvableBn254 } from '../provable-bn254.js';
-import { fields, modifiedField } from './fields-bn254.js';
+} from '../circuit-value-bn254.ts';
+import { FieldBn254 } from '../field-bn254.ts';
+import { assert } from '../gadgets/common-bn254.ts';
+import { Poseidon, ProvableHashable, packToFields } from '../hash-bn254.ts';
+import { ProvableBn254 } from '../provable-bn254.ts';
+import { fields, modifiedField } from './fields-bn254.ts';
 
 export { Packed, Hashed };
 

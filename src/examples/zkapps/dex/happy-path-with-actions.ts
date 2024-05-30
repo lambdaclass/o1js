@@ -1,6 +1,6 @@
 import { expect } from 'expect';
 import { AccountUpdate, Mina, UInt64 } from 'o1js';
-import { tic, toc } from '../../utils/tic-toc.node.js';
+import { tic, toc } from '../../utils/tic-toc.node.ts';
 import {
   Dex,
   DexTokenHolder,
@@ -8,8 +8,8 @@ import {
   getTokenBalances,
   keys,
   tokenIds,
-} from './dex-with-actions.js';
-import { TrivialCoin as TokenContract } from './erc20.js';
+} from './dex-with-actions.ts';
+import { TrivialCoin as TokenContract } from './erc20.ts';
 
 let proofsEnabled = true;
 tic('Happy path with actions');

@@ -3,10 +3,10 @@
  * - a namespace with tools for writing provable code
  * - the main interface for types that can be used in provable code
  */
-import { Field, Bool } from './core.js';
+import { Field, Bool } from './core.ts';
 import { Provable as Provable_, Snarky } from '../snarky.js';
-import type { FlexibleProvable, ProvableExtended } from './circuit-value.js';
-import { Context } from './global-context.js';
+import type { FlexibleProvable, ProvableExtended } from './circuit-value.ts';
+import { Context } from './global-context.ts';
 import {
   HashInput,
   InferJson,
@@ -21,7 +21,7 @@ import {
   runAndCheck,
   runUnchecked,
   constraintSystem,
-} from './provable-context.js';
+} from './provable-context.ts';
 
 // external API
 export { Provable };

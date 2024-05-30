@@ -8,11 +8,11 @@ import {
   SmartContract,
   Reducer,
 } from 'o1js';
-import { VotingAppParams } from './factory.js';
+import { VotingAppParams } from './factory.ts';
 
-import { Membership_ } from './membership.js';
+import { Membership_ } from './membership.ts';
 
-import { Voting_ } from './voting.js';
+import { Voting_ } from './voting.ts';
 
 class InvalidContract extends SmartContract {
   deploy(args: DeployArgs) {

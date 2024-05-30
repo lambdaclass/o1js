@@ -1,15 +1,15 @@
 /**
  * This module holds the global Mina instance and its interface.
  */
-import { Field } from '../core.js';
-import { UInt64, UInt32 } from '../int.js';
-import { PublicKey, PrivateKey } from '../signature.js';
-import type { EventActionFilterOptions } from '././../mina/graphql.js';
-import type { NetworkId } from '../../mina-signer/src/types.js';
-import type { Transaction, PendingTransaction } from '../mina.js';
-import type { Account } from './account.js';
-import type { NetworkValue } from '../precondition.js';
-import type * as Fetch from '../fetch.js';
+import { Field } from '../core.ts';
+import { UInt64, UInt32 } from '../int.ts';
+import { PublicKey, PrivateKey } from '../signature.ts';
+import type { EventActionFilterOptions } from '././../mina/graphql.ts';
+import type { NetworkId } from '../../mina-signer/src/types.ts';
+import type { Transaction, PendingTransaction } from '../mina.ts';
+import type { Account } from './account.ts';
+import type { NetworkValue } from '../precondition.ts';
+import type * as Fetch from '../fetch.ts';
 
 export {
   Mina,
@@ -50,30 +50,30 @@ const ZkappStateLength = 8;
 type FeePayerSpec =
   | PublicKey
   | {
-      sender: PublicKey;
-      fee?: number | string | UInt64;
-      memo?: string;
-      nonce?: number;
-    }
+    sender: PublicKey;
+    fee?: number | string | UInt64;
+    memo?: string;
+    nonce?: number;
+  }
   | undefined;
 
 type DeprecatedFeePayerSpec =
   | PublicKey
   | PrivateKey
   | ((
-      | {
-          feePayerKey: PrivateKey;
-          sender?: PublicKey;
-        }
-      | {
-          feePayerKey?: PrivateKey;
-          sender: PublicKey;
-        }
-    ) & {
-      fee?: number | string | UInt64;
-      memo?: string;
-      nonce?: number;
-    })
+    | {
+      feePayerKey: PrivateKey;
+      sender?: PublicKey;
+    }
+    | {
+      feePayerKey?: PrivateKey;
+      sender: PublicKey;
+    }
+  ) & {
+    fee?: number | string | UInt64;
+    memo?: string;
+    nonce?: number;
+  })
   | undefined;
 
 type ActionStates = {

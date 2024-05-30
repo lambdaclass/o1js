@@ -1,4 +1,4 @@
-import { Bytes as InternalBytes, createBytes } from './bytes.js';
+import { Bytes as InternalBytes, createBytes } from './bytes.ts';
 
 export { Bytes };
 

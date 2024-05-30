@@ -3,17 +3,17 @@ import {
   Fp,
   FiniteField,
   createField,
-} from '../bindings/crypto/finite-field.js';
-import { FieldBn254, FieldVar, checkBitLength, withMessage } from './field-bn254.js';
-import { ProvableBn254 } from './provable-bn254.js';
-import { BoolBn254 } from './bool-bn254.js';
-import { Tuple, TupleMap, TupleN } from './util/types.js';
-import { Field3 } from './gadgets/foreign-field-bn254.js';
-import { GadgetsBn254 } from './gadgets/gadgets-bn254.js';
-import { ForeignFieldBn254 as FF } from './gadgets/foreign-field-bn254.js';
-import { assert } from './gadgets/common-bn254.js';
-import { l3, l } from './gadgets/range-check-bn254.js';
-import { ProvablePureExtendedBn254 } from './circuit-value-bn254.js';
+} from '../bindings/crypto/finite-field.ts';
+import { FieldBn254, FieldVar, checkBitLength, withMessage } from './field-bn254.ts';
+import { ProvableBn254 } from './provable-bn254.ts';
+import { BoolBn254 } from './bool-bn254.ts';
+import { Tuple, TupleMap, TupleN } from './util/types.ts';
+import { Field3 } from './gadgets/foreign-field-bn254.ts';
+import { GadgetsBn254 } from './gadgets/gadgets-bn254.ts';
+import { ForeignFieldBn254 as FF } from './gadgets/foreign-field-bn254.ts';
+import { assert } from './gadgets/common-bn254.ts';
+import { l3, l } from './gadgets/range-check-bn254.ts';
+import { ProvablePureExtendedBn254 } from './circuit-value-bn254.ts';
 
 // external API
 export { createForeignFieldBn254 };

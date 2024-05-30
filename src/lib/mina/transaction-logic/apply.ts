@@ -1,8 +1,8 @@
 /**
  * Apply transactions to a ledger of accounts.
  */
-import { type AccountUpdate } from '../../account-update.js';
-import { Account } from '../account.js';
+import { type AccountUpdate } from '../../account-update.ts';
+import { Account } from '../account.ts';
 
 export { applyAccountUpdate };
 

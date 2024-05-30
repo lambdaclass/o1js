@@ -1,5 +1,5 @@
-import { AccountUpdate, TokenId } from './account-update.js';
-import * as Mina from './mina.js';
+import { AccountUpdate, TokenId } from './account-update.ts';
+import * as Mina from './mina.ts';
 import { expect } from 'expect';
 
 let Local = Mina.LocalBlockchain();

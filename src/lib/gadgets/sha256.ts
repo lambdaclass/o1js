@@ -1,15 +1,15 @@
 // https://csrc.nist.gov/pubs/fips/180-4/upd1/final
-import { mod } from '../../bindings/crypto/finite-field.js';
-import { Field } from '../core.js';
-import { UInt32, UInt8 } from '../int.js';
-import { FlexibleBytes } from '../provable-types/bytes.js';
-import { Bytes } from '../provable-types/provable-types.js';
-import { chunk } from '../util/arrays.js';
-import { TupleN } from '../util/types.js';
-import { divMod32 } from './arithmetic.js';
-import { bytesToWord, wordToBytes } from './bit-slices.js';
-import { bitSlice, exists } from './common.js';
-import { rangeCheck16 } from './range-check.js';
+import { mod } from '../../bindings/crypto/finite-field.ts';
+import { Field } from '../core.ts';
+import { UInt32, UInt8 } from '../int.ts';
+import { FlexibleBytes } from '../provable-types/bytes.ts';
+import { Bytes } from '../provable-types/provable-types.ts';
+import { chunk } from '../util/arrays.ts';
+import { TupleN } from '../util/types.ts';
+import { divMod32 } from './arithmetic.ts';
+import { bytesToWord, wordToBytes } from './bit-slices.ts';
+import { bitSlice, exists } from './common.ts';
+import { rangeCheck16 } from './range-check.ts';
 
 export { SHA256 };
 

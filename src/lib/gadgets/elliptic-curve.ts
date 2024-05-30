@@ -1,25 +1,25 @@
-import { inverse, mod } from '../../bindings/crypto/finite-field.js';
-import { Field } from '../field.js';
-import { Provable } from '../provable.js';
-import { assert, exists } from './common.js';
-import { Field3, ForeignField, split, weakBound } from './foreign-field.js';
-import { l2, multiRangeCheck } from './range-check.js';
-import { sha256 } from 'js-sha256';
+import { inverse, mod } from '../../bindings/crypto/finite-field.ts';
+import { Field } from '../field.ts';
+import { Provable } from '../provable.ts';
+import { assert, exists } from './common.ts';
+import { Field3, ForeignField, split, weakBound } from './foreign-field.ts';
+import { l2, multiRangeCheck } from './range-check.ts';
+import { sha256 } from 'npm:js-sha256';
 import {
   bigIntToBytes,
   bytesToBigInt,
-} from '../../bindings/crypto/bigint-helpers.js';
+} from '../../bindings/crypto/bigint-helpers.ts';
 import {
   CurveAffine,
   affineAdd,
   affineDouble,
-} from '../../bindings/crypto/elliptic-curve.js';
-import { Bool } from '../bool.js';
-import { provable } from '../circuit-value.js';
-import { assertPositiveInteger } from '../../bindings/crypto/non-negative.js';
-import { arrayGet, assertBoolean } from './basic.js';
-import { sliceField3 } from './bit-slices.js';
-import { Hashed } from '../provable-types/packed.js';
+} from '../../bindings/crypto/elliptic-curve.ts';
+import { Bool } from '../bool.ts';
+import { provable } from '../circuit-value.ts';
+import { assertPositiveInteger } from '../../bindings/crypto/non-negative.ts';
+import { arrayGet, assertBoolean } from './basic.ts';
+import { sliceField3 } from './bit-slices.ts';
+import { Hashed } from '../provable-types/packed.ts';
 
 // external API
 export { EllipticCurve, Point, Ecdsa };
@@ -436,10 +436,10 @@ function multiScalarMul(
           windowSize === 1
             ? points[j]
             : arrayGetGeneric(
-                HashedPoint.provable,
-                hashedTables[j],
-                sj
-              ).unhash();
+              HashedPoint.provable,
+              hashedTables[j],
+              sj
+            ).unhash();
 
         // ec addition
         let added = add(sum, sjP, Curve);

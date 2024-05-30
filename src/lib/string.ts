@@ -1,8 +1,8 @@
-import { Bool, Field } from '../lib/core.js';
-import { arrayProp, CircuitValue, prop } from './circuit-value.js';
-import { Provable } from './provable.js';
-import { Poseidon } from './hash.js';
-import { Gadgets } from './gadgets/gadgets.js';
+import { Bool, Field } from '../lib/core.ts';
+import { arrayProp, CircuitValue, prop } from './circuit-value.ts';
+import { Provable } from './provable.ts';
+import { Poseidon } from './hash.ts';
+import { Gadgets } from './gadgets/gadgets.ts';
 
 export { Character, CircuitString };
 

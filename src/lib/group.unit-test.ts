@@ -1,7 +1,7 @@
-import { Group } from './core.js';
-import { test, Random } from './testing/property.js';
-import { Provable } from './provable.js';
-import { Poseidon } from '../provable/poseidon-bigint.js';
+import { Group } from './core.ts';
+import { test, Random } from './testing/property.ts';
+import { Provable } from './provable.ts';
+import { Poseidon } from '../provable/poseidon-bigint.ts';
 
 console.log('group consistency tests');
 

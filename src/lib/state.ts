@@ -1,13 +1,13 @@
 import { ProvablePure } from '../snarky.js';
-import { FlexibleProvablePure } from './circuit-value.js';
-import { AccountUpdate, TokenId } from './account-update.js';
-import { PublicKey } from './signature.js';
-import * as Mina from './mina.js';
-import { fetchAccount } from './fetch.js';
-import { SmartContract } from './zkapp.js';
-import { Account } from './mina/account.js';
-import { Provable } from './provable.js';
-import { Field } from '../lib/core.js';
+import { FlexibleProvablePure } from './circuit-value.ts';
+import { AccountUpdate, TokenId } from './account-update.ts';
+import { PublicKey } from './signature.ts';
+import * as Mina from './mina.ts';
+import { fetchAccount } from './fetch.ts';
+import { SmartContract } from './zkapp.ts';
+import { Account } from './mina/account.ts';
+import { Provable } from './provable.ts';
+import { Field } from '../lib/core.ts';
 
 // external API
 export { State, state, declareState };

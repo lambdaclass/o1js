@@ -1,7 +1,7 @@
-import { Gadgets } from './gadgets/gadgets.js';
-import { Poseidon } from './hash.js';
-import { Keccak } from './keccak.js';
-import { Bytes } from './provable-types/provable-types.js';
+import { Gadgets } from './gadgets/gadgets.ts';
+import { Poseidon } from './hash.ts';
+import { Keccak } from './keccak.ts';
+import { Bytes } from './provable-types/provable-types.ts';
 
 export { Hash };
 

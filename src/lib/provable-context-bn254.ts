@@ -1,8 +1,8 @@
-import { Context } from './global-context.js';
+import { Context } from './global-context.ts';
 import { Gate, GateType, JsonGate, Snarky } from '../snarky.js';
-import { parseHexString32 } from '../bindings/crypto/bigint-helpers.js';
-import { prettifyStacktrace } from './errors.js';
-import { Fp } from '../bindings/crypto/finite-field.js';
+import { parseHexString32 } from '../bindings/crypto/bigint-helpers.ts';
+import { prettifyStacktrace } from './errors.ts';
+import { Fp } from '../bindings/crypto/finite-field.ts';
 
 // internal API
 export {

@@ -7,8 +7,8 @@ import {
   UInt64,
   TransactionVersion,
 } from 'o1js';
-import { getProfiler } from '../../utils/profiler.js';
-import { TokenContract, addresses, createDex, keys, tokenIds } from './dex.js';
+import { getProfiler } from '../../utils/profiler.ts';
+import { TokenContract, addresses, createDex, keys, tokenIds } from './dex.ts';
 
 let proofsEnabled = false;
 console.log('starting upgradeability tests');

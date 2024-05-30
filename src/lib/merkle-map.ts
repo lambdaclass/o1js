@@ -1,8 +1,8 @@
-import { arrayProp, CircuitValue } from './circuit-value.js';
-import { Field, Bool } from './core.js';
-import { Poseidon } from './hash.js';
-import { MerkleTree, MerkleWitness } from './merkle-tree.js';
-import { Provable } from './provable.js';
+import { arrayProp, CircuitValue } from './circuit-value.ts';
+import { Field, Bool } from './core.ts';
+import { Poseidon } from './hash.ts';
+import { MerkleTree, MerkleWitness } from './merkle-tree.ts';
+import { Provable } from './provable.ts';
 
 const bits = 255;
 const printDebugs = false;
@@ -89,7 +89,7 @@ export class MerkleMap {
    */
   getWitness(key: Field) {
     const index = this._keyToIndex(key);
-    class MyMerkleWitness extends MerkleWitness(bits + 1) {}
+    class MyMerkleWitness extends MerkleWitness(bits + 1) { }
     const witness = new MyMerkleWitness(this.tree.getWitness(index));
 
     if (printDebugs) {

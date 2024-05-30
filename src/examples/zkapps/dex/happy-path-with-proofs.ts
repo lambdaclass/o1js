@@ -1,8 +1,8 @@
 import { expect } from 'expect';
 import { AccountUpdate, Mina, UInt64 } from 'o1js';
-import { getProfiler } from '../../utils/profiler.js';
-import { tic, toc } from '../../utils/tic-toc.node.js';
-import { TokenContract, addresses, createDex, keys, tokenIds } from './dex.js';
+import { getProfiler } from '../../utils/profiler.ts';
+import { tic, toc } from '../../utils/tic-toc.node.ts';
+import { TokenContract, addresses, createDex, keys, tokenIds } from './dex.ts';
 
 const TokenProfiler = getProfiler('Token with Proofs');
 TokenProfiler.start('Token with proofs test flow');

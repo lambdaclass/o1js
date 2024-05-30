@@ -1,5 +1,5 @@
-import { CurveParams } from '../../bindings/crypto/elliptic-curve-examples.js';
-import { createCurveAffine } from '../../bindings/crypto/elliptic-curve.js';
+import { CurveParams } from '../../bindings/crypto/elliptic-curve-examples.ts';
+import { createCurveAffine } from '../../bindings/crypto/elliptic-curve.ts';
 import {
   array,
   equivalentProvable,
@@ -7,11 +7,11 @@ import {
   onlyIf,
   spec,
   unit,
-} from '../testing/equivalent.js';
-import { Random } from '../testing/random.js';
-import { assert } from './common.js';
-import { EllipticCurve, Point, simpleMapToCurve } from './elliptic-curve.js';
-import { foreignField, throwError } from './test-utils.js';
+} from '../testing/equivalent.ts';
+import { Random } from '../testing/random.ts';
+import { assert } from './common.ts';
+import { EllipticCurve, Point, simpleMapToCurve } from './elliptic-curve.ts';
+import { foreignField, throwError } from './test-utils.ts';
 
 // provable equivalence tests
 const Secp256k1 = createCurveAffine(CurveParams.Secp256k1);

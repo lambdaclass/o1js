@@ -1,4 +1,4 @@
-import { TupleN } from '../util/types.js';
+import { TupleN } from '../util/types.ts';
 
 /**
  * This module contains basic methods for interacting with OCaml
@@ -122,8 +122,8 @@ const MlResult = {
  */
 type MlTuple<T, N extends number> = N extends N
   ? number extends N
-    ? [0, ...T[]] // N is not typed as a constant => fall back to array
-    : [0, ...TupleRec<T, N, []>]
+  ? [0, ...T[]] // N is not typed as a constant => fall back to array
+  : [0, ...TupleRec<T, N, []>]
   : never;
 
 type TupleRec<T, N extends number, R extends unknown[]> = R['length'] extends N

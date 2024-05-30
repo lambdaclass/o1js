@@ -1,24 +1,24 @@
-import { Bool, Field, Sign, UInt32 } from '../../provable/field-bigint.js';
-import { PrivateKey, PublicKey } from '../../provable/curve-bigint.js';
+import { Bool, Field, Sign, UInt32 } from '../../provable/field-bigint.ts';
+import { PrivateKey, PublicKey } from '../../provable/curve-bigint.ts';
 import {
   Json,
   AccountUpdate,
   ZkappCommand,
-} from '../../bindings/mina-transaction/gen/transaction-bigint.js';
+} from '../../bindings/mina-transaction/gen/transaction-bigint.ts';
 import {
   hashWithPrefix,
   packToFields,
   prefixes,
-} from '../../provable/poseidon-bigint.js';
-import { Memo } from './memo.js';
+} from '../../provable/poseidon-bigint.ts';
+import { Memo } from './memo.ts';
 import {
   Signature,
   signFieldElement,
   verifyFieldElement,
   zkAppBodyPrefix,
-} from './signature.js';
-import { mocks } from '../../bindings/crypto/constants.js';
-import { NetworkId } from './types.js';
+} from './signature.ts';
+import { mocks } from '../../bindings/crypto/constants.ts';
+import { NetworkId } from './types.ts';
 
 // external API
 export { signZkappCommand, verifyZkappCommandSignature };

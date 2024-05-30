@@ -3,15 +3,15 @@ import {
   AccountUpdateForest,
   AccountUpdateTreeBase,
   TokenId,
-} from '../../account-update.js';
-import { Field } from '../../core.js';
-import { Provable } from '../../provable.js';
-import { Struct } from '../../circuit-value.js';
-import { assert } from '../../gadgets/common.js';
+} from '../../account-update.ts';
+import { Field } from '../../core.ts';
+import { Provable } from '../../provable.ts';
+import { Struct } from '../../circuit-value.ts';
+import { assert } from '../../gadgets/common.ts';
 import {
   MerkleListIterator,
   MerkleList,
-} from '../../provable-types/merkle-list.js';
+} from '../../provable-types/merkle-list.ts';
 
 export { TokenAccountUpdateIterator };
 
@@ -21,7 +21,7 @@ const AccountUpdateIterator =
 class Layer extends Struct({
   forest: AccountUpdateIterator.provable,
   mayUseToken: AccountUpdate.MayUseToken.type,
-}) {}
+}) { }
 const ParentLayers = MerkleList.create<Layer>(Layer);
 
 type MayUseToken = AccountUpdate['body']['mayUseToken'];

@@ -10,11 +10,11 @@ import {
   WasmPastaFqPlonkIndex,
 } from '../../bindings/compiled/node_bindings/plonk_wasm.cjs';
 import { Pickles, getWasm } from '../../snarky.js';
-import { VerifierIndex } from '../../bindings/crypto/bindings/kimchi-types.js';
-import { getRustConversion } from '../../bindings/crypto/bindings.js';
-import { MlString } from '../ml/base.js';
-import { CacheHeader, cacheHeaderVersion } from './cache.js';
-import type { MethodInterface } from '../proof-system.js';
+import { VerifierIndex } from '../../bindings/crypto/bindings/kimchi-types.ts';
+import { getRustConversion } from '../../bindings/crypto/bindings.ts';
+import { MlString } from '../ml/base.ts';
+import { CacheHeader, cacheHeaderVersion } from './cache.ts';
+import type { MethodInterface } from '../proof-system.ts';
 
 export {
   parseHeader,

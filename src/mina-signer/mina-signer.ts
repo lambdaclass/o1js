@@ -1,6 +1,6 @@
-import { PrivateKey, PublicKey } from '../provable/curve-bigint.js';
-import * as Json from './src/types.js';
-import type { SignedLegacy, Signed, NetworkId } from './src/types.js';
+import { PrivateKey, PublicKey } from '../provable/curve-bigint.ts';
+import * as Json from './src/types.ts';
+import type { SignedLegacy, Signed, NetworkId } from './src/types.ts';
 
 import {
   isPayment,
@@ -10,13 +10,13 @@ import {
   isSignedZkappCommand,
   isStakeDelegation,
   isZkappCommand,
-} from './src/utils.js';
-import * as TransactionJson from '../bindings/mina-transaction/gen/transaction-json.js';
-import { ZkappCommand } from '../bindings/mina-transaction/gen/transaction-bigint.js';
+} from './src/utils.ts';
+import * as TransactionJson from '../bindings/mina-transaction/gen/transaction-json.ts';
+import { ZkappCommand } from '../bindings/mina-transaction/gen/transaction-bigint.ts';
 import {
   signZkappCommand,
   verifyZkappCommandSignature,
-} from './src/sign-zkapp-command.js';
+} from './src/sign-zkapp-command.ts';
 import {
   signPayment,
   signStakeDelegation,
@@ -24,15 +24,15 @@ import {
   verifyPayment,
   verifyStakeDelegation,
   verifyStringSignature,
-} from './src/sign-legacy.js';
-import { hashPayment, hashStakeDelegation } from './src/transaction-hash.js';
-import { Memo } from './src/memo.js';
+} from './src/sign-legacy.ts';
+import { hashPayment, hashStakeDelegation } from './src/transaction-hash.ts';
+import { Memo } from './src/memo.ts';
 import {
   publicKeyToHex,
   rosettaTransactionToSignedCommand,
-} from './src/rosetta.js';
-import { sign, Signature, verify } from './src/signature.js';
-import { createNullifier } from './src/nullifier.js';
+} from './src/rosetta.ts';
+import { sign, Signature, verify } from './src/signature.ts';
+import { createNullifier } from './src/nullifier.ts';
 
 export { Client, Client as default, type NetworkId };
 

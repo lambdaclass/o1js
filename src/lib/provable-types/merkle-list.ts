@@ -1,9 +1,9 @@
-import { Bool, Field } from '../core.js';
-import { Provable } from '../provable.js';
-import { Struct, Unconstrained } from '../circuit-value.js';
-import { assert } from '../gadgets/common.js';
+import { Bool, Field } from '../core.ts';
+import { Provable } from '../provable.ts';
+import { Struct, Unconstrained } from '../circuit-value.ts';
+import { assert } from '../gadgets/common.ts';
 import { provableFromClass } from '../../bindings/lib/provable-snarky.js';
-import { Poseidon, packToFields, ProvableHashable } from '../hash.js';
+import { Poseidon, packToFields, ProvableHashable } from '../hash.ts';
 
 export {
   MerkleListBase,

@@ -1,7 +1,7 @@
-import { Circuit, circuitMain } from './circuit.js';
-import { UInt64, UInt32 } from './int.js';
+import { Circuit, circuitMain } from './circuit.ts';
+import { UInt64, UInt32 } from './int.ts';
 import { expect } from 'expect';
-import { Provable } from './provable.js';
+import { Provable } from './provable.ts';
 
 class Primitives extends Circuit {
   @circuitMain

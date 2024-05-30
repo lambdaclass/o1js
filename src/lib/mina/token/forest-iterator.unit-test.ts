@@ -1,22 +1,22 @@
-import { Random, test } from '../../testing/property.js';
-import { RandomTransaction } from '../../../mina-signer/src/random-transaction.js';
-import { TokenAccountUpdateIterator } from './forest-iterator.js';
+import { Random, test } from '../../testing/property.ts';
+import { RandomTransaction } from '../../../mina-signer/src/random-transaction.ts';
+import { TokenAccountUpdateIterator } from './forest-iterator.ts';
 import {
   AccountUpdate,
   AccountUpdateForest,
   TokenId,
   hashAccountUpdate,
-} from '../../account-update.js';
-import { TypesBigint } from '../../../bindings/mina-transaction/types.js';
+} from '../../account-update.ts';
+import { TypesBigint } from '../../../bindings/mina-transaction/types.ts';
 import { Pickles } from '../../../snarky.js';
 import {
   accountUpdatesToCallForest,
   callForestHash,
-} from '../../../mina-signer/src/sign-zkapp-command.js';
+} from '../../../mina-signer/src/sign-zkapp-command.ts';
 import assert from 'assert';
-import { Field, Bool } from '../../core.js';
-import { Bool as BoolB } from '../../../provable/field-bigint.js';
-import { PublicKey } from '../../signature.js';
+import { Field, Bool } from '../../core.ts';
+import { Bool as BoolB } from '../../../provable/field-bigint.ts';
+import { PublicKey } from '../../signature.ts';
 
 // RANDOM NUMBER GENERATORS for account updates
 

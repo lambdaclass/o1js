@@ -1,4 +1,4 @@
-import { test } from './fixtures/on-chain-state-mgmt-zkapp.js';
+import { test } from './fixtures/on-chain-state-mgmt-zkapp.ts';
 
 test.describe('On-Chain State Management zkApp UI', () => {
   test('should load page and initialize o1js', async ({

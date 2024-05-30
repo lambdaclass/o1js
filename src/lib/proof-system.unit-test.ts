@@ -1,6 +1,6 @@
-import { Field, Bool } from './core.js';
-import { Struct } from './circuit-value.js';
-import { UInt64 } from './int.js';
+import { Field, Bool } from './core.ts';
+import { Struct } from './circuit-value.ts';
+import { UInt64 } from './int.ts';
 import {
   CompiledTag,
   Empty,
@@ -8,23 +8,23 @@ import {
   ZkProgram,
   picklesRuleFromFunction,
   sortMethodArguments,
-} from './proof-system.js';
+} from './proof-system.ts';
 import { expect } from 'expect';
 import { Pickles, ProvablePure, Snarky } from '../snarky.js';
-import { AnyFunction } from './util/types.js';
-import { snarkContext } from './provable-context.js';
+import { AnyFunction } from './util/types.ts';
+import { snarkContext } from './provable-context.ts';
 import { it } from 'node:test';
-import { Provable } from './provable.js';
-import { bool, equivalentAsync, field, record } from './testing/equivalent.js';
-import { FieldConst, FieldVar } from './field.js';
+import { Provable } from './provable.ts';
+import { bool, equivalentAsync, field, record } from './testing/equivalent.ts';
+import { FieldConst, FieldVar } from './field.ts';
 
 const EmptyProgram = ZkProgram({
   name: 'empty',
   publicInput: Field,
-  methods: { run: { privateInputs: [], method: (_) => {} } },
+  methods: { run: { privateInputs: [], method: (_) => { } } },
 });
 
-class EmptyProof extends ZkProgram.Proof(EmptyProgram) {}
+class EmptyProof extends ZkProgram.Proof(EmptyProgram) { }
 
 // unit-test zkprogram creation helpers:
 // -) sortMethodArguments
@@ -108,7 +108,7 @@ const program = ZkProgram({
   methods: {
     baseCase: {
       privateInputs: [Provable.Array(Field, N)],
-      method(_: Field[]) {},
+      method(_: Field[]) { },
     },
   },
 });
@@ -131,7 +131,7 @@ expect(emptyMethodsMetadata.run).toEqual(
 class CounterPublicInput extends Struct({
   current: UInt64,
   updated: UInt64,
-}) {}
+}) { }
 const CounterProgram = ZkProgram({
   name: 'counter',
   publicInput: CounterPublicInput,

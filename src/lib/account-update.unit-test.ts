@@ -1,4 +1,4 @@
-import { mocks } from '../bindings/crypto/constants.js';
+import { mocks } from '../bindings/crypto/constants.ts';
 import {
   AccountUpdate,
   PrivateKey,
@@ -7,7 +7,7 @@ import {
   Int64,
   Types,
   Provable,
-} from '../index.js';
+} from '../index.ts';
 import { Test } from '../snarky.js';
 import { expect } from 'expect';
 

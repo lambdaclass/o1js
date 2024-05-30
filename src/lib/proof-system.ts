@@ -2,7 +2,7 @@ import {
   EmptyNull,
   EmptyUndefined,
   EmptyVoid,
-} from '../bindings/lib/generic.js';
+} from '../bindings/lib/generic.ts';
 import { withThreadPool } from '../bindings/js/wrapper.js';
 import {
   ProvablePure,
@@ -12,7 +12,7 @@ import {
   Gate,
   GateType,
 } from '../snarky.js';
-import { Field, Bool } from './core.js';
+import { Field, Bool } from './core.ts';
 import {
   FlexibleProvable,
   FlexibleProvablePure,
@@ -22,21 +22,21 @@ import {
   provable,
   provablePure,
   toConstant,
-} from './circuit-value.js';
-import { Provable } from './provable.js';
-import { assert, prettifyStacktracePromise } from './errors.js';
-import { snarkContext } from './provable-context.js';
-import { hashConstant } from './hash.js';
-import { MlArray, MlBool, MlResult, MlPair } from './ml/base.js';
-import { MlFieldArray, MlFieldConstArray } from './ml/fields.js';
-import { FieldConst, FieldVar } from './field.js';
-import { Cache, readCache, writeCache } from './proof-system/cache.js';
+} from './circuit-value.ts';
+import { Provable } from './provable.ts';
+import { assert, prettifyStacktracePromise } from './errors.ts';
+import { snarkContext } from './provable-context.ts';
+import { hashConstant } from './hash.ts';
+import { MlArray, MlBool, MlResult, MlPair } from './ml/base.ts';
+import { MlFieldArray, MlFieldConstArray } from './ml/fields.ts';
+import { FieldConst, FieldVar } from './field.ts';
+import { Cache, readCache, writeCache } from './proof-system/cache.ts';
 import {
   decodeProverKey,
   encodeProverKey,
   parseHeader,
-} from './proof-system/prover-keys.js';
-import { setSrsCache, unsetSrsCache } from '../bindings/crypto/bindings/srs.js';
+} from './proof-system/prover-keys.ts';
+import { setSrsCache, unsetSrsCache } from '../bindings/crypto/bindings/srs.ts';
 
 // public API
 export {
@@ -85,7 +85,7 @@ class Proof<Input, Output> {
   static tag: () => { name: string } = () => {
     throw Error(
       `You cannot use the \`Proof\` class directly. Instead, define a subclass:\n` +
-        `class MyProof extends Proof<PublicInput, PublicOutput> { ... }`
+      `class MyProof extends Proof<PublicInput, PublicOutput> { ... }`
     );
   };
   publicInput: Input;
@@ -294,12 +294,12 @@ function ZkProgram<
     >['method'];
   };
 } & {
-  [I in keyof Types]: Prover<
-    InferProvableOrUndefined<Get<StatementType, 'publicInput'>>,
-    InferProvableOrVoid<Get<StatementType, 'publicOutput'>>,
-    Types[I]
-  >;
-} {
+    [I in keyof Types]: Prover<
+      InferProvableOrUndefined<Get<StatementType, 'publicInput'>>,
+      InferProvableOrVoid<Get<StatementType, 'publicOutput'>>,
+      Types[I]
+    >;
+  } {
   let methods = config.methods;
   let publicInputType: ProvablePure<any> = config.publicInput ?? Undefined;
   let publicOutputType: ProvablePure<any> = config.publicOutput ?? Void;
@@ -330,18 +330,18 @@ function ZkProgram<
         analyzeMethod(publicInputType, methodEntry, methodFunctions[i]),
       ])
     ) as any as {
-      [I in keyof Types]: ReturnType<typeof analyzeMethod>;
-    };
+        [I in keyof Types]: ReturnType<typeof analyzeMethod>;
+      };
   }
 
   let compileOutput:
     | {
-        provers: Pickles.Prover[];
-        verify: (
-          statement: Pickles.Statement<FieldConst>,
-          proof: Pickles.Proof
-        ) => Promise<boolean>;
-      }
+      provers: Pickles.Prover[];
+      verify: (
+        statement: Pickles.Statement<FieldConst>,
+        proof: Pickles.Proof
+      ) => Promise<boolean>;
+    }
     | undefined;
 
   async function compile({
@@ -379,7 +379,7 @@ function ZkProgram<
       if (picklesProver === undefined) {
         throw Error(
           `Cannot prove execution of program.${key}(), no prover found. ` +
-            `Try calling \`await program.compile()\` first, this will cache provers in the background.`
+          `Try calling \`await program.compile()\` first, this will cache provers in the background.`
         );
       }
       let publicInputFields = toFieldConsts(publicInputType, publicInput);
@@ -486,14 +486,14 @@ let i = 0;
 class SelfProof<PublicInput, PublicOutput> extends Proof<
   PublicInput,
   PublicOutput
-> {}
+> { }
 
 class VerificationKey extends Struct({
   ...provable({ data: String, hash: Field }),
   toJSON({ data }: { data: string }) {
     return data;
   },
-}) {}
+}) { }
 
 function sortMethodArguments(
   programName: string,
@@ -510,7 +510,7 @@ function sortMethodArguments(
       if (privateInput === Proof) {
         throw Error(
           `You cannot use the \`Proof\` class directly. Instead, define a subclass:\n` +
-            `class MyProof extends Proof<PublicInput, PublicOutput> { ... }`
+          `class MyProof extends Proof<PublicInput, PublicOutput> { ... }`
         );
       }
       allArgs.push({ type: 'proof', index: proofArgs.length });
@@ -527,8 +527,7 @@ function sortMethodArguments(
       witnessArgs.push((privateInput as any).provable);
     } else {
       throw Error(
-        `Argument ${
-          i + 1
+        `Argument ${i + 1
         } of method ${methodName} is not a provable type: ${privateInput}`
       );
     }
@@ -536,7 +535,7 @@ function sortMethodArguments(
   if (proofArgs.length > 2) {
     throw Error(
       `${programName}.${methodName}() has more than two proof arguments, which is not supported.\n` +
-        `Suggestion: You can merge more than two proofs by merging two at a time in a binary tree.`
+      `Suggestion: You can merge more than two proofs by merging two at a time in a binary tree.`
     );
   }
   return { methodName, witnessArgs, proofArgs, allArgs };
@@ -774,7 +773,7 @@ function picklesRuleFromFunction(
   if (proofArgs.length > 2) {
     throw Error(
       `${proofSystemTag.name}.${methodName}() has more than two proof arguments, which is not supported.\n` +
-        `Suggestion: You can merge more than two proofs by merging two at a time in a binary tree.`
+      `Suggestion: You can merge more than two proofs by merging two at a time in a binary tree.`
     );
   }
   let proofsToVerify = proofArgs.map((Proof) => {
@@ -785,7 +784,7 @@ function picklesRuleFromFunction(
       if (compiledTag === undefined) {
         throw Error(
           `${proofSystemTag.name}.compile() depends on ${tag.name}, but we cannot find compilation output for ${tag.name}.\n` +
-            `Try to run ${tag.name}.compile() first.`
+          `Try to run ${tag.name}.compile() first.`
         );
       }
       return { isSelf: false, tag: compiledTag };
@@ -896,7 +895,7 @@ function getStatementType<
   ) {
     throw Error(
       `You cannot use the \`Proof\` class directly. Instead, define a subclass:\n` +
-        `class MyProof extends Proof<PublicInput, PublicOutput> { ... }`
+      `class MyProof extends Proof<PublicInput, PublicOutput> { ... }`
     );
   }
   return {
@@ -1031,8 +1030,8 @@ type TupleToInstances<T> = {
 type Subclass<Class extends new (...args: any) => any> = (new (
   ...args: any
 ) => InstanceType<Class>) & {
-  [K in keyof Class]: Class[K];
-} & { prototype: InstanceType<Class> };
+    [K in keyof Class]: Class[K];
+  } & { prototype: InstanceType<Class> };
 
 type PrivateInput = Provable<any> | Subclass<typeof Proof>;
 
@@ -1042,16 +1041,16 @@ type Method<
   Args extends Tuple<PrivateInput>
 > = PublicInput extends undefined
   ? {
-      privateInputs: Args;
-      method(...args: TupleToInstances<Args>): PublicOutput;
-    }
+    privateInputs: Args;
+    method(...args: TupleToInstances<Args>): PublicOutput;
+  }
   : {
-      privateInputs: Args;
-      method(
-        publicInput: PublicInput,
-        ...args: TupleToInstances<Args>
-      ): PublicOutput;
-    };
+    privateInputs: Args;
+    method(
+      publicInput: PublicInput,
+      ...args: TupleToInstances<Args>
+    ): PublicOutput;
+  };
 
 type Prover<
   PublicInput,
@@ -1059,12 +1058,12 @@ type Prover<
   Args extends Tuple<PrivateInput>
 > = PublicInput extends undefined
   ? (
-      ...args: TupleToInstances<Args>
-    ) => Promise<Proof<PublicInput, PublicOutput>>
+    ...args: TupleToInstances<Args>
+  ) => Promise<Proof<PublicInput, PublicOutput>>
   : (
-      publicInput: PublicInput,
-      ...args: TupleToInstances<Args>
-    ) => Promise<Proof<PublicInput, PublicOutput>>;
+    publicInput: PublicInput,
+    ...args: TupleToInstances<Args>
+  ) => Promise<Proof<PublicInput, PublicOutput>>;
 
 type ProvableOrUndefined<A> = A extends undefined ? typeof Undefined : A;
 type ProvableOrVoid<A> = A extends undefined ? typeof Void : A;

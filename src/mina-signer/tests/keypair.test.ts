@@ -1,4 +1,4 @@
-import Client from '../dist/node/mina-signer/mina-signer.js';
+import Client from '../dist/node/mina-signer/mina-signer.ts';
 
 describe('Keypair', () => {
   let client: Client;

@@ -1,6 +1,6 @@
 import { expect } from 'expect';
-import { jsLayout } from '../../bindings/mina-transaction/gen/js-layout.js';
-import { Signature } from '../../mina-signer/src/signature.js';
+import { jsLayout } from '../../bindings/mina-transaction/gen/js-layout.ts';
+import { Signature } from '../../mina-signer/src/signature.ts';
 import {
   AccountUpdate,
   PublicKey,
@@ -9,8 +9,8 @@ import {
   signableFromLayout,
   ZkappCommand,
   Json,
-} from '../../bindings/mina-transaction/gen/transaction-bigint.js';
-import { test, Random } from './property.js';
+} from '../../bindings/mina-transaction/gen/transaction-bigint.ts';
+import { test, Random } from './property.ts';
 
 // some trivial roundtrip tests
 test(Random.accountUpdate, (accountUpdate, assert) => {
@@ -18,7 +18,7 @@ test(Random.accountUpdate, (accountUpdate, assert) => {
   let jsonString = JSON.stringify(json);
   assert(
     jsonString ===
-      JSON.stringify(AccountUpdate.toJSON(AccountUpdate.fromJSON(json)))
+    JSON.stringify(AccountUpdate.toJSON(AccountUpdate.fromJSON(json)))
   );
   // TODO add back using `fromValue`
   // let fields = AccountUpdate.toFields(accountUpdate);

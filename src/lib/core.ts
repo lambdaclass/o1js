@@ -1,7 +1,7 @@
-import { Field as InternalField } from './field.js';
-import { Bool as InternalBool } from './bool.js';
-import { Group as InternalGroup } from './group.js';
-import { Scalar } from './scalar.js';
+import { Field as InternalField } from './field.ts';
+import { Bool as InternalBool } from './bool.ts';
+import { Group as InternalGroup } from './group.ts';
+import { Scalar } from './scalar.ts';
 
 export { Field, Bool, Scalar, Group };
 

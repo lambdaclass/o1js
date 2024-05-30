@@ -1,10 +1,10 @@
-import { Field, FieldVar } from './field.js';
-import { Scalar } from './scalar.js';
+import { Field, FieldVar } from './field.ts';
+import { Scalar } from './scalar.ts';
 import { Snarky } from '../snarky.js';
-import { Field as Fp } from '../provable/field-bigint.js';
-import { GroupAffine, Pallas } from '../bindings/crypto/elliptic-curve.js';
-import { Provable } from './provable.js';
-import { Bool } from './bool.js';
+import { Field as Fp } from '../provable/field-bigint.ts';
+import { GroupAffine, Pallas } from '../bindings/crypto/elliptic-curve.ts';
+import { Provable } from './provable.ts';
+import { Bool } from './bool.ts';
 
 export { Group };
 
@@ -417,8 +417,7 @@ class Group {
       isZero.or(x3.add(ax).add(Pallas.b).equals(y.square())).assertTrue();
     } catch (error) {
       if (!(error instanceof Error)) return error;
-      throw `${`Element (x: ${g.x}, y: ${g.y}) is not an element of the group.`}\n${
-        error.message
+      throw `${`Element (x: ${g.x}, y: ${g.y}) is not an element of the group.`}\n${error.message
       }`;
     }
   }

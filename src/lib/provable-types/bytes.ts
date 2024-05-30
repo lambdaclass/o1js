@@ -1,10 +1,10 @@
 import { provableFromClass } from '../../bindings/lib/provable-snarky.js';
-import type { ProvablePureExtended } from '../circuit-value.js';
-import { assert } from '../gadgets/common.js';
-import { chunkString } from '../util/arrays.js';
-import { Provable } from '../provable.js';
-import { UInt8 } from '../int.js';
-import { randomBytes } from '../../bindings/crypto/random.js';
+import type { ProvablePureExtended } from '../circuit-value.ts';
+import { assert } from '../gadgets/common.ts';
+import { chunkString } from '../util/arrays.ts';
+import { Provable } from '../provable.ts';
+import { UInt8 } from '../int.ts';
+import { randomBytes } from '../../bindings/crypto/random.ts';
 
 // external API
 export { Bytes };

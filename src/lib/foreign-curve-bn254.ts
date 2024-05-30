@@ -2,15 +2,15 @@ import {
   CurveParams,
   CurveAffine,
   createCurveAffine,
-} from '../bindings/crypto/elliptic-curve.js';
-import { AlmostForeignFieldBn254, ForeignFieldBn254, createForeignFieldBn254 } from './foreign-field-bn254.js';
-import { EllipticCurveBn254, PointBn254 } from './gadgets/elliptic-curve-bn254.js';
-import { Field3 } from './gadgets/foreign-field-bn254.js';
-import { assert } from './gadgets/common-bn254.js';
-import { ProvableBn254 } from './provable-bn254.js';
+} from '../bindings/crypto/elliptic-curve.ts';
+import { AlmostForeignFieldBn254, ForeignFieldBn254, createForeignFieldBn254 } from './foreign-field-bn254.ts';
+import { EllipticCurveBn254, PointBn254 } from './gadgets/elliptic-curve-bn254.ts';
+import { Field3 } from './gadgets/foreign-field-bn254.ts';
+import { assert } from './gadgets/common-bn254.ts';
+import { ProvableBn254 } from './provable-bn254.ts';
 import { provableFromClass } from '../bindings/lib/provable-snarky.js';
-import { FieldConst, FieldVar } from './field-bn254.js';
-import { ProvablePureExtendedBn254 } from './circuit-value-bn254.js';
+import { FieldConst, FieldVar } from './field-bn254.ts';
+import { ProvablePureExtendedBn254 } from './circuit-value-bn254.ts';
 
 // external API
 export { createForeignCurveBn254, ForeignCurveBn254 };

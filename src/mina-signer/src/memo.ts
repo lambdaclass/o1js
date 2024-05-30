@@ -5,15 +5,15 @@ import {
   stringLengthInBytes,
   stringToBytes,
   withBits,
-} from '../../bindings/lib/binable.js';
-import { base58 } from '../../lib/base58.js';
+} from '../../bindings/lib/binable.ts';
+import { base58 } from '../../lib/base58.ts';
 import {
   HashInputLegacy,
   hashWithPrefix,
   packToFieldsLegacy,
   prefixes,
-} from '../../provable/poseidon-bigint.js';
-import { versionBytes } from '../../bindings/crypto/constants.js';
+} from '../../provable/poseidon-bigint.ts';
+import { versionBytes } from '../../bindings/crypto/constants.ts';
 
 export { Memo };
 

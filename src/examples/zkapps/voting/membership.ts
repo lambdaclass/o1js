@@ -14,8 +14,8 @@ import {
   Provable,
   TransactionVersion,
 } from 'o1js';
-import { Member } from './member.js';
-import { ParticipantPreconditions } from './preconditions.js';
+import { Member } from './member.ts';
+import { ParticipantPreconditions } from './preconditions.ts';
 
 let participantPreconditions = ParticipantPreconditions.default;
 

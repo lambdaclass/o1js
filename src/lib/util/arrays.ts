@@ -1,4 +1,4 @@
-import { assert } from '../gadgets/common.js';
+import { assert } from '../gadgets/common.ts';
 
 export { chunk, chunkString };
 

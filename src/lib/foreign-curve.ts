@@ -2,16 +2,16 @@ import {
   CurveParams,
   CurveAffine,
   createCurveAffine,
-} from '../bindings/crypto/elliptic-curve.js';
-import type { Group } from './group.js';
-import { ProvablePureExtended } from './circuit-value.js';
-import { AlmostForeignField, ForeignField, createForeignField } from './foreign-field.js';
-import { EllipticCurve, Point } from './gadgets/elliptic-curve.js';
-import { Field3 } from './gadgets/foreign-field.js';
-import { assert } from './gadgets/common.js';
-import { Provable } from './provable.js';
+} from '../bindings/crypto/elliptic-curve.ts';
+import type { Group } from './group.ts';
+import { ProvablePureExtended } from './circuit-value.ts';
+import { AlmostForeignField, ForeignField, createForeignField } from './foreign-field.ts';
+import { EllipticCurve, Point } from './gadgets/elliptic-curve.ts';
+import { Field3 } from './gadgets/foreign-field.ts';
+import { assert } from './gadgets/common.ts';
+import { Provable } from './provable.ts';
 import { provableFromClass } from '../bindings/lib/provable-snarky.js';
-import { FieldConst, FieldVar } from './field.js';
+import { FieldConst, FieldVar } from './field.ts';
 
 // external API
 export { createForeignCurve, ForeignCurve };

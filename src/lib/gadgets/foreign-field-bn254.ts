@@ -4,16 +4,16 @@
 import {
   inverse as modInverse,
   mod,
-} from '../../bindings/crypto/finite-field.js';
+} from '../../bindings/crypto/finite-field.ts';
 import { provableTuple } from '../../bindings/lib/provable-snarky.js';
-import { BoolBn254 } from '../bool-bn254.js';
-import { Unconstrained } from '../circuit-value-bn254.js';
-import { FieldBn254 } from '../field-bn254.js';
-import { GatesBn254, foreignFieldAdd } from '../gates-bn254.js';
-import { modifiedField } from '../provable-types/fields-bn254.js';
-import { Tuple, TupleN } from '../util/types.js';
-import { assertOneOf } from './basic-bn254.js';
-import { assert, bitSlice, exists, toVar, toVars } from './common-bn254.js';
+import { BoolBn254 } from '../bool-bn254.ts';
+import { Unconstrained } from '../circuit-value-bn254.ts';
+import { FieldBn254 } from '../field-bn254.ts';
+import { GatesBn254, foreignFieldAdd } from '../gates-bn254.ts';
+import { modifiedField } from '../provable-types/fields-bn254.ts';
+import { Tuple, TupleN } from '../util/types.ts';
+import { assertOneOf } from './basic-bn254.ts';
+import { assert, bitSlice, exists, toVar, toVars } from './common-bn254.ts';
 import {
   l,
   lMask,
@@ -22,7 +22,7 @@ import {
   l2Mask,
   l3,
   compactMultiRangeCheck,
-} from './range-check-bn254.js';
+} from './range-check-bn254.ts';
 
 // external API
 export { ForeignFieldBn254, Field3 };

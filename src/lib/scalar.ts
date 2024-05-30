@@ -1,8 +1,8 @@
 import { Snarky, Provable } from '../snarky.js';
-import { Scalar as Fq } from '../provable/curve-bigint.js';
-import { Field, FieldConst, FieldVar } from './field.js';
-import { MlArray } from './ml/base.js';
-import { Bool } from './bool.js';
+import { Scalar as Fq } from '../provable/curve-bigint.ts';
+import { Field, FieldConst, FieldVar } from './field.ts';
+import { MlArray } from './ml/base.ts';
+import { Bool } from './bool.ts';
 
 export { Scalar, ScalarConst, unshift, shift };
 

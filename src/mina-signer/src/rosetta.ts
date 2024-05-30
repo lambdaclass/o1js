@@ -1,8 +1,8 @@
-import { Binable } from '../../bindings/lib/binable.js';
-import { PublicKey, Scalar } from '../../provable/curve-bigint.js';
-import { Field } from '../../provable/field-bigint.js';
-import { Memo } from './memo.js';
-import { Signature } from './signature.js';
+import { Binable } from '../../bindings/lib/binable.ts';
+import { PublicKey, Scalar } from '../../provable/curve-bigint.ts';
+import { Field } from '../../provable/field-bigint.ts';
+import { Memo } from './memo.ts';
+import { Signature } from './signature.ts';
 
 export { publicKeyToHex, rosettaTransactionToSignedCommand };
 

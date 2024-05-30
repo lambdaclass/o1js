@@ -1,13 +1,13 @@
-import { Fq } from '../../bindings/crypto/finite-field.js';
-import { Poseidon } from '../../bindings/crypto/poseidon.js';
+import { Fq } from '../../bindings/crypto/finite-field.ts';
+import { Poseidon } from '../../bindings/crypto/poseidon.ts';
 import {
   Group,
   PublicKey,
   Scalar,
   PrivateKey,
-} from '../../provable/curve-bigint.js';
-import { Field } from '../../provable/field-bigint.js';
-import { Nullifier } from './types.js';
+} from '../../provable/curve-bigint.ts';
+import { Field } from '../../provable/field-bigint.ts';
+import { Nullifier } from './types.ts';
 
 export { createNullifier };
 

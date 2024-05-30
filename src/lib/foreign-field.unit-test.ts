@@ -1,7 +1,7 @@
 import { ProvablePure } from '../snarky.js';
-import { Field, Group } from './core.js';
-import { ForeignField, createForeignField } from './foreign-field.js';
-import { Scalar as Fq, Group as G } from '../provable/curve-bigint.js';
+import { Field, Group } from './core.ts';
+import { ForeignField, createForeignField } from './foreign-field.ts';
+import { Scalar as Fq, Group as G } from '../provable/curve-bigint.ts';
 import { expect } from 'expect';
 import {
   bool,
@@ -11,17 +11,17 @@ import {
   spec,
   throwError,
   unit,
-} from './testing/equivalent.js';
-import { test, Random } from './testing/property.js';
-import { Provable } from './provable.js';
-import { Circuit, circuitMain } from './circuit.js';
-import { Scalar } from './scalar.js';
-import { l } from './gadgets/range-check.js';
-import { assert } from './gadgets/common.js';
+} from './testing/equivalent.ts';
+import { test, Random } from './testing/property.ts';
+import { Provable } from './provable.ts';
+import { Circuit, circuitMain } from './circuit.ts';
+import { Scalar } from './scalar.ts';
+import { l } from './gadgets/range-check.ts';
+import { assert } from './gadgets/common.ts';
 
 // toy example - F_17
 
-class SmallField extends createForeignField(17n) {}
+class SmallField extends createForeignField(17n) { }
 
 let x = SmallField.from(16);
 x.assertEquals(-1); // 16 = -1 (mod 17)
@@ -35,7 +35,7 @@ expect(() => createForeignField(1n << 260n)).toThrow(
 
 // real example - foreign field arithmetic in the Pallas scalar field
 
-class ForeignScalar extends createForeignField(Fq.modulus) {}
+class ForeignScalar extends createForeignField(Fq.modulus) { }
 
 // types
 ForeignScalar.provable satisfies ProvablePure<ForeignScalar>;

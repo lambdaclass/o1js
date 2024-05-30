@@ -1,7 +1,7 @@
 import { expect } from 'expect';
 import { AccountUpdate, Mina, Permissions, TokenId, UInt64 } from 'o1js';
-import { getProfiler } from '../../utils/profiler.js';
-import { TokenContract, addresses, createDex, keys, tokenIds } from './dex.js';
+import { getProfiler } from '../../utils/profiler.ts';
+import { TokenContract, addresses, createDex, keys, tokenIds } from './dex.ts';
 
 let proofsEnabled = false;
 let Local = Mina.LocalBlockchain({
@@ -234,7 +234,7 @@ async function main({ withVesting }: { withVesting: boolean }) {
     expect(balances.user.MINA).toEqual(oldBalances.user.MINA);
     expect(balances.user.lqXY).toEqual(
       oldBalances.user.lqXY +
-        (USER_DX * oldBalances.total.lqXY) / oldBalances.dex.X
+      (USER_DX * oldBalances.total.lqXY) / oldBalances.dex.X
     );
   } else {
     await expect(tx.sendOrThrowIfError()).rejects.toThrow(

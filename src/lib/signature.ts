@@ -1,20 +1,20 @@
-import { Field, Bool, Group, Scalar } from './core.js';
-import { prop, CircuitValue, AnyConstructor } from './circuit-value.js';
-import { hashWithPrefix } from './hash.js';
+import { Field, Bool, Group, Scalar } from './core.ts';
+import { prop, CircuitValue, AnyConstructor } from './circuit-value.ts';
+import { hashWithPrefix } from './hash.ts';
 import {
   deriveNonce,
   Signature as SignatureBigint,
   signaturePrefix,
-} from '../mina-signer/src/signature.js';
-import { Bool as BoolBigint } from '../provable/field-bigint.js';
+} from '../mina-signer/src/signature.ts';
+import { Bool as BoolBigint } from '../provable/field-bigint.ts';
 import {
   Scalar as ScalarBigint,
   PrivateKey as PrivateKeyBigint,
   PublicKey as PublicKeyBigint,
-} from '../provable/curve-bigint.js';
-import { prefixes } from '../bindings/crypto/constants.js';
-import { constantScalarToBigint } from './scalar.js';
-import { toConstantField } from './field.js';
+} from '../provable/curve-bigint.ts';
+import { prefixes } from '../bindings/crypto/constants.ts';
+import { constantScalarToBigint } from './scalar.ts';
+import { toConstantField } from './field.ts';
 
 // external API
 export { PrivateKey, PublicKey, Signature };

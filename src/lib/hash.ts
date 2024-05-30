@@ -1,13 +1,13 @@
-import { HashInput, ProvableExtended, Struct } from './circuit-value.js';
+import { HashInput, ProvableExtended, Struct } from './circuit-value.ts';
 import { Snarky } from '../snarky.js';
-import { Field } from './core.js';
-import { createHashHelpers } from './hash-generic.js';
-import { Provable } from './provable.js';
-import { MlFieldArray } from './ml/fields.js';
-import { Poseidon as PoseidonBigint } from '../bindings/crypto/poseidon.js';
-import { assert } from './errors.js';
-import { rangeCheckN } from './gadgets/range-check.js';
-import { TupleN } from './util/types.js';
+import { Field } from './core.ts';
+import { createHashHelpers } from './hash-generic.ts';
+import { Provable } from './provable.ts';
+import { MlFieldArray } from './ml/fields.ts';
+import { Poseidon as PoseidonBigint } from '../bindings/crypto/poseidon.ts';
+import { assert } from './errors.ts';
+import { rangeCheckN } from './gadgets/range-check.ts';
+import { TupleN } from './util/types.ts';
 
 // external API
 export { Poseidon, TokenSymbol };

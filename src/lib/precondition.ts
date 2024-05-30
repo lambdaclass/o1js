@@ -1,19 +1,19 @@
-import { Bool, Field } from './core.js';
-import { circuitValueEquals, cloneCircuitValue } from './circuit-value.js';
-import { Provable } from './provable.js';
-import { activeInstance as Mina } from './mina/mina-instance.js';
-import type { AccountUpdate } from './account-update.js';
-import { Int64, UInt32, UInt64 } from './int.js';
-import { Layout } from '../bindings/mina-transaction/gen/transaction.js';
-import { jsLayout } from '../bindings/mina-transaction/gen/js-layout.js';
-import { emptyReceiptChainHash, TokenSymbol } from './hash.js';
-import { PublicKey } from './signature.js';
+import { Bool, Field } from './core.ts';
+import { circuitValueEquals, cloneCircuitValue } from './circuit-value.ts';
+import { Provable } from './provable.ts';
+import { activeInstance as Mina } from './mina/mina-instance.ts';
+import type { AccountUpdate } from './account-update.ts';
+import { Int64, UInt32, UInt64 } from './int.ts';
+import { Layout } from '../bindings/mina-transaction/gen/transaction.ts';
+import { jsLayout } from '../bindings/mina-transaction/gen/js-layout.ts';
+import { emptyReceiptChainHash, TokenSymbol } from './hash.ts';
+import { PublicKey } from './signature.ts';
 import {
   Actions,
   ZkappUri,
-} from '../bindings/mina-transaction/transaction-leaves.js';
-import type { Types } from '../bindings/mina-transaction/types.js';
-import { ZkappStateLength } from './mina/mina-instance.js';
+} from '../bindings/mina-transaction/transaction-leaves.ts';
+import type { Types } from '../bindings/mina-transaction/types.ts';
+import { ZkappStateLength } from './mina/mina-instance.ts';
 
 export {
   preconditions,
@@ -205,7 +205,7 @@ function Network(accountUpdate: AccountUpdate): Network {
       let slot = timestampToGlobalSlot(
         value,
         `Timestamp precondition unsatisfied: the timestamp can only equal numbers of the form ${genesisTimestamp} + k*${slotTime},\n` +
-          `i.e., the genesis timestamp plus an integer number of slots.`
+        `i.e., the genesis timestamp plus an integer number of slots.`
       );
       return network.globalSlotSinceGenesis.requireEquals(slot);
     },
@@ -579,12 +579,11 @@ function assertPreconditionInvariants(accountUpdate: AccountUpdate) {
     let shortPath = preconditionPath.split('.').pop();
     let errorMessage = `You used \`${self}.${preconditionPath}.get()\` without adding a precondition that links it to the actual ${shortPath}.
 Consider adding this line to your code:
-${self}.${preconditionPath}.assertEquals(${self}.${preconditionPath}.get());${
-      hasAssertBetween
+${self}.${preconditionPath}.assertEquals(${self}.${preconditionPath}.get());${hasAssertBetween
         ? `
 You can also add more flexible preconditions with \`${self}.${preconditionPath}.assertBetween(...)\`.`
         : ''
-    }`;
+      }`;
     throw Error(errorMessage);
   }
 }
@@ -622,12 +621,12 @@ type CurrentSlot = {
 
 type PreconditionBaseTypes<T> = {
   [K in keyof T]: T[K] extends RangeCondition<infer U>
-    ? U
-    : T[K] extends FlaggedOptionCondition<infer U>
-    ? U
-    : T[K] extends Field
-    ? Field
-    : PreconditionBaseTypes<T[K]>;
+  ? U
+  : T[K] extends FlaggedOptionCondition<infer U>
+  ? U
+  : T[K] extends Field
+  ? Field
+  : PreconditionBaseTypes<T[K]>;
 };
 
 type PreconditionSubclassType<U> = {
@@ -658,12 +657,12 @@ type PreconditionSubclassRangeType<U> = PreconditionSubclassType<U> & {
 
 type PreconditionClassType<T> = {
   [K in keyof T]: T[K] extends RangeCondition<infer U>
-    ? PreconditionSubclassRangeType<U>
-    : T[K] extends FlaggedOptionCondition<infer U>
-    ? PreconditionSubclassType<U>
-    : T[K] extends Field
-    ? PreconditionSubclassType<Field>
-    : PreconditionClassType<T[K]>;
+  ? PreconditionSubclassRangeType<U>
+  : T[K] extends FlaggedOptionCondition<infer U>
+  ? PreconditionSubclassType<U>
+  : T[K] extends Field
+  ? PreconditionSubclassType<Field>
+  : PreconditionClassType<T[K]>;
 };
 
 // update
@@ -677,16 +676,16 @@ type UpdateValueOriginal = {
 };
 type UpdateValue = {
   [K in keyof Update_]: K extends 'zkappUri' | 'tokenSymbol'
-    ? string
-    : Update_[K]['value'];
+  ? string
+  : Update_[K]['value'];
 };
 
 // TS magic for computing flattened precondition types
 
 type JoinEntries<K, P> = K extends string
   ? P extends [string, unknown, unknown]
-    ? [`${K}${P[0] extends '' ? '' : '.'}${P[0]}`, P[1], P[2]]
-    : never
+  ? [`${K}${P[0] extends '' ? '' : '.'}${P[0]}`, P[1], P[2]]
+  : never
   : never;
 
 type PreconditionFlatEntry<T> = T extends RangeCondition<infer V>
@@ -698,8 +697,8 @@ type PreconditionFlatEntry<T> = T extends RangeCondition<infer V>
 type FlatPreconditionValue = {
   [S in PreconditionFlatEntry<NetworkPrecondition> as `network.${S[0]}`]: S[2];
 } & {
-  [S in PreconditionFlatEntry<AccountPreconditionNoState> as `account.${S[0]}`]: S[2];
-} & { validWhile: PreconditionFlatEntry<CurrentSlotPrecondition>[2] };
+    [S in PreconditionFlatEntry<AccountPreconditionNoState> as `account.${S[0]}`]: S[2];
+  } & { validWhile: PreconditionFlatEntry<CurrentSlotPrecondition>[2] };
 
 type LongKey = keyof FlatPreconditionValue;
 

@@ -1,7 +1,7 @@
-import { Provable } from '../provable.js';
-import { Field as Fp } from '../../provable/field-bigint.js';
-import { Field } from '../field.js';
-import { Gates } from '../gates.js';
+import { Provable } from '../provable.ts';
+import { Field as Fp } from '../../provable/field-bigint.ts';
+import { Field } from '../field.ts';
+import { Gates } from '../gates.ts';
 import {
   MAX_BITS,
   assert,
@@ -9,9 +9,9 @@ import {
   toVar,
   exists,
   bitSlice,
-} from './common.js';
-import { rangeCheck32, rangeCheck64 } from './range-check.js';
-import { divMod32 } from './arithmetic.js';
+} from './common.ts';
+import { rangeCheck32, rangeCheck64 } from './range-check.ts';
+import { divMod32 } from './arithmetic.ts';
 
 export {
   xor,

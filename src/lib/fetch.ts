@@ -1,18 +1,18 @@
-import 'isomorphic-fetch';
-import { Field } from './core.js';
-import { UInt32, UInt64 } from './int.js';
-import { Actions, TokenId } from './account-update.js';
-import { PublicKey, PrivateKey } from './signature.js';
-import { NetworkValue } from './precondition.js';
-import { Types } from '../bindings/mina-transaction/types.js';
-import { ActionStates } from './mina.js';
-import { LedgerHash, EpochSeed, StateHash } from './base58-encodings.js';
+import 'npm:isomorphic-fetch';
+import { Field } from './core.ts';
+import { UInt32, UInt64 } from './int.ts';
+import { Actions, TokenId } from './account-update.ts';
+import { PublicKey, PrivateKey } from './signature.ts';
+import { NetworkValue } from './precondition.ts';
+import { Types } from '../bindings/mina-transaction/types.ts';
+import { ActionStates } from './mina.ts';
+import { LedgerHash, EpochSeed, StateHash } from './base58-encodings.ts';
 import {
   Account,
   fillPartialAccount,
   parseFetchedAccount,
   PartialAccount,
-} from './mina/account.js';
+} from './mina/account.ts';
 import {
   type LastBlockQueryResponse,
   type GenesisConstantsResponse,
@@ -35,7 +35,7 @@ import {
   genesisConstantsQuery,
   accountQuery,
   currentSlotQuery,
-} from './mina/graphql.js';
+} from './mina/graphql.ts';
 
 export {
   fetchAccount,
@@ -366,7 +366,7 @@ async function fetchMissingData(
           await fetchLastBlock(graphqlEndpoint);
           await fetchGenesisConstants(graphqlEndpoint);
           delete networksToFetch[network[0]];
-        } catch {}
+        } catch { }
       })()
     );
   }
@@ -718,7 +718,7 @@ async function fetchActions(
   if (
     fetchedActions.length !== 0 &&
     fetchedActions[0].actionState.actionStateOne ===
-      actionStates.fromActionState
+    actionStates.fromActionState
   ) {
     fetchedActions = fetchedActions.slice(1);
   }

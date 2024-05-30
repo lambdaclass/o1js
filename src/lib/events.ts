@@ -1,9 +1,9 @@
-import { prefixes } from '../bindings/crypto/constants.js';
-import { prefixToField } from '../bindings/lib/binable.js';
+import { prefixes } from '../bindings/crypto/constants.ts';
+import { prefixToField } from '../bindings/lib/binable.ts';
 import {
   GenericProvableExtended,
   GenericSignableField,
-} from '../bindings/lib/generic.js';
+} from '../bindings/lib/generic.ts';
 
 export { createEvents, dataAsHash };
 
@@ -151,7 +151,7 @@ function dataAsHash<T, J, Field>({
     fromJSON(json) {
       return fromJSON(json);
     },
-    check() {},
+    check() { },
     toInput({ hash }) {
       return { fields: [hash] };
     },

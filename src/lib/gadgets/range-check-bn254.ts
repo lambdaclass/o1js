@@ -1,10 +1,10 @@
 import { Snarky } from '../../snarky.js';
-import { Fp } from '../../bindings/crypto/finite-field.js';
-import { FieldBn254 as FieldProvable } from '../../provable/field-bn254-bigint.js';
-import { FieldBn254 } from '../field-bn254.js';
-import { GatesBn254 } from '../gates-bn254.js';
-import { assert, bitSlice, exists, toVar, toVars } from './common-bn254.js';
-import { BoolBn254 } from '../bool-bn254.js';
+import { Fp } from '../../bindings/crypto/finite-field.ts';
+import { FieldBn254 as FieldProvable } from '../../provable/field-bn254-bigint.ts';
+import { FieldBn254 } from '../field-bn254.ts';
+import { GatesBn254 } from '../gates-bn254.ts';
+import { assert, bitSlice, exists, toVar, toVars } from './common-bn254.ts';
+import { BoolBn254 } from '../bool-bn254.ts';
 
 export {
   rangeCheck64,

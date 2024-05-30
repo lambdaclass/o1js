@@ -1,15 +1,15 @@
 /**
  * Gadgets for converting between field elements and bit slices of various lengths
  */
-import { bigIntToBits } from '../../bindings/crypto/bigint-helpers.js';
-import { Bool } from '../bool.js';
-import { Field } from '../field.js';
-import { UInt8 } from '../int.js';
-import { Provable } from '../provable.js';
-import { chunk } from '../util/arrays.js';
-import { assert, exists } from './common.js';
-import type { Field3 } from './foreign-field.js';
-import { l } from './range-check.js';
+import { bigIntToBits } from '../../bindings/crypto/bigint-helpers.ts';
+import { Bool } from '../bool.ts';
+import { Field } from '../field.ts';
+import { UInt8 } from '../int.ts';
+import { Provable } from '../provable.ts';
+import { chunk } from '../util/arrays.ts';
+import { assert, exists } from './common.ts';
+import type { Field3 } from './foreign-field.ts';
+import { l } from './range-check.ts';
 
 export { bytesToWord, wordToBytes, wordsToBytes, bytesToWords, sliceField3 };
 

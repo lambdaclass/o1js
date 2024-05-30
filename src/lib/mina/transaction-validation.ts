@@ -8,19 +8,19 @@ import {
   ZkappPublicInput,
   AccountUpdate,
   dummySignature,
-} from '../account-update.js';
-import { Field } from '../core.js';
-import { UInt64, UInt32 } from '../int.js';
-import { PublicKey } from '../signature.js';
-import { JsonProof, verify } from '../proof-system.js';
-import { verifyAccountUpdateSignature } from '../../mina-signer/src/sign-zkapp-command.js';
-import { TransactionCost, TransactionLimits } from './constants.js';
-import { cloneCircuitValue } from '../circuit-value.js';
-import { assert } from '../gadgets/common.js';
-import { Types, TypesBigint } from '../../bindings/mina-transaction/types.js';
-import type { NetworkId } from '../../mina-signer/src/types.js';
-import type { Account } from './account.js';
-import type { NetworkValue } from '../precondition.js';
+} from '../account-update.ts';
+import { Field } from '../core.ts';
+import { UInt64, UInt32 } from '../int.ts';
+import { PublicKey } from '../signature.ts';
+import { JsonProof, verify } from '../proof-system.ts';
+import { verifyAccountUpdateSignature } from '../../mina-signer/src/sign-zkapp-command.ts';
+import { TransactionCost, TransactionLimits } from './constants.ts';
+import { cloneCircuitValue } from '../circuit-value.ts';
+import { assert } from '../gadgets/common.ts';
+import { Types, TypesBigint } from '../../bindings/mina-transaction/types.ts';
+import type { NetworkId } from '../../mina-signer/src/types.ts';
+import type { Account } from './account.ts';
+import type { NetworkValue } from '../precondition.ts';
 
 export {
   reportGetAccountError,
@@ -162,7 +162,7 @@ async function verifyAccountUpdate(
   ) {
     throw Error(
       'Top-level account update can not use or pass on token permissions. Make sure that\n' +
-        'accountUpdate.body.mayUseToken = AccountUpdate.MayUseToken.No;'
+      'accountUpdate.body.mayUseToken = AccountUpdate.MayUseToken.No;'
     );
   }
 

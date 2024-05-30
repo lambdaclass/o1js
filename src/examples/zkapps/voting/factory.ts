@@ -4,12 +4,12 @@
  */
 
 import { PrivateKey } from 'o1js';
-import { Membership, Membership_ } from './membership.js';
+import { Membership, Membership_ } from './membership.ts';
 import {
   ElectionPreconditions,
   ParticipantPreconditions,
-} from './preconditions.js';
-import { Voting, Voting_ } from './voting.js';
+} from './preconditions.ts';
+import { Voting, Voting_ } from './voting.ts';
 
 export interface VotingAppParams {
   candidatePreconditions: ParticipantPreconditions;

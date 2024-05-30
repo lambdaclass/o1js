@@ -1,4 +1,4 @@
-import { Bytes12, SHA256Program } from './sha256.js';
+import { Bytes12, SHA256Program } from './sha256.ts';
 
 console.time('compile');
 await SHA256Program.compile();

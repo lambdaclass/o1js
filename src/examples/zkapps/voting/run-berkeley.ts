@@ -12,14 +12,14 @@ import {
   UInt32,
   UInt64,
 } from 'o1js';
-import { VotingApp, VotingAppParams } from './factory.js';
-import { Member, MyMerkleWitness } from './member.js';
-import { OffchainStorage } from './off-chain-storage.js';
+import { VotingApp, VotingAppParams } from './factory.ts';
+import { Member, MyMerkleWitness } from './member.ts';
+import { OffchainStorage } from './off-chain-storage.ts';
 import {
   ParticipantPreconditions,
   ElectionPreconditions,
-} from './preconditions.js';
-import { getResults, vote } from './voting-lib.js';
+} from './preconditions.ts';
+import { getResults, vote } from './voting-lib.ts';
 await isReady;
 
 const Berkeley = Mina.Network({
@@ -226,8 +226,7 @@ let results = getResults(contracts.voting, storage.votesStore);
 
 if (results[members[1].toBase58()] !== 1) {
   throw Error(
-    `Candidate ${members[1].toBase58()} should have one vote, but has ${
-      results[members[1].toBase58()]
+    `Candidate ${members[1].toBase58()} should have one vote, but has ${results[members[1].toBase58()]
     } `
   );
 }

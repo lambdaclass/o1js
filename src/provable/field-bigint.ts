@@ -1,10 +1,10 @@
-import { randomBytes } from '../bindings/crypto/random.js';
-import { Fp, mod } from '../bindings/crypto/finite-field.js';
+import { randomBytes } from '../bindings/crypto/random.ts';
+import { Fp, mod } from '../bindings/crypto/finite-field.ts';
 import {
   BinableBigint,
   HashInput,
   ProvableBigint,
-} from '../bindings/lib/provable-bigint.js';
+} from '../bindings/lib/provable-bigint.ts';
 
 export { Field, Bool, UInt32, UInt64, Sign };
 export { pseudoClass, sizeInBits, checkRange, checkField };
@@ -136,7 +136,7 @@ const Sign = pseudoClass(
 function pseudoClass<
   F extends (...args: any) => any,
   M
-  // M extends Provable<ReturnType<F>>
+// M extends Provable<ReturnType<F>>
 >(constructor: F, module: M) {
   return Object.assign<F, M>(constructor, module);
 }

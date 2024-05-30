@@ -3,17 +3,17 @@ import {
   Fp,
   FiniteField,
   createField,
-} from '../bindings/crypto/finite-field.js';
-import { Field, FieldConst, FieldVar, checkBitLength, withMessage } from './field.js';
-import { Provable } from './provable.js';
-import { Bool } from './bool.js';
-import { Tuple, TupleMap, TupleN } from './util/types.js';
-import { Field3 } from './gadgets/foreign-field.js';
-import { Gadgets } from './gadgets/gadgets.js';
-import { ForeignField as FF } from './gadgets/foreign-field.js';
-import { assert } from './gadgets/common.js';
-import { l3, l } from './gadgets/range-check.js';
-import { ProvablePureExtended } from './circuit-value.js';
+} from '../bindings/crypto/finite-field.ts';
+import { Field, FieldConst, FieldVar, checkBitLength, withMessage } from './field.ts';
+import { Provable } from './provable.ts';
+import { Bool } from './bool.ts';
+import { Tuple, TupleMap, TupleN } from './util/types.ts';
+import { Field3 } from './gadgets/foreign-field.ts';
+import { Gadgets } from './gadgets/gadgets.ts';
+import { ForeignField as FF } from './gadgets/foreign-field.ts';
+import { assert } from './gadgets/common.ts';
+import { l3, l } from './gadgets/range-check.ts';
+import { ProvablePureExtended } from './circuit-value.ts';
 
 // external API
 export { createForeignField };

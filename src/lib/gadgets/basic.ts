@@ -1,11 +1,11 @@
 /**
  * Basic gadgets that only use generic gates
  */
-import { Fp } from '../../bindings/crypto/finite-field.js';
-import type { Field, VarField } from '../field.js';
-import { existsOne, toVar } from './common.js';
-import { Gates } from '../gates.js';
-import { TupleN } from '../util/types.js';
+import { Fp } from '../../bindings/crypto/finite-field.ts';
+import type { Field, VarField } from '../field.ts';
+import { existsOne, toVar } from './common.ts';
+import { Gates } from '../gates.ts';
+import { TupleN } from '../util/types.ts';
 import { Snarky } from '../../snarky.js';
 
 export { assertBoolean, arrayGet, assertOneOf };

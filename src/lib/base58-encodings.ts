@@ -1,5 +1,5 @@
-import { fieldEncodings } from './base58.js';
-import { Field } from './core.js';
+import { fieldEncodings } from './base58.ts';
+import { Field } from './core.ts';
 
 export { TokenId, ReceiptChainHash, LedgerHash, EpochSeed, StateHash };
 

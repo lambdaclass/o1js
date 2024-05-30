@@ -1,5 +1,5 @@
-import type { ZkappCommand as ZkappCommandJson } from '../../bindings/mina-transaction/gen/transaction-json.js';
-import type { SignatureJson } from './signature.js';
+import type { ZkappCommand as ZkappCommandJson } from '../../bindings/mina-transaction/gen/transaction-json.ts';
+import type { SignatureJson } from './signature.ts';
 
 export type UInt32 = number | bigint | string;
 export type UInt64 = number | bigint | string;

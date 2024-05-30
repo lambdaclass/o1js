@@ -1,7 +1,7 @@
 import { it } from 'node:test';
-import { Provable } from './provable.js';
-import { exists } from './gadgets/common.js';
-import { Field } from './field.js';
+import { Provable } from './provable.ts';
+import { exists } from './gadgets/common.ts';
+import { Field } from './field.ts';
 import { expect } from 'expect';
 
 it('can witness large field array', () => {
