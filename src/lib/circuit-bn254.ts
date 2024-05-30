@@ -25,12 +25,12 @@ class CircuitBn254 {
   static generateKeypair() {
     let main = mainFromCircuitData(this._main);
     let publicInputSize = this._main.publicInputType.sizeInFields();
-    return prettifyStacktracePromise(
-      withThreadPool(async () => {
-        let keypair = Snarky.bn254.circuit.compile(main, publicInputSize);
-        return new KeypairBn254(keypair);
-      })
-    );
+    // return prettifyStacktracePromise(
+    // withThreadPool(async () => {
+    let keypair = Snarky.bn254.circuit.compile(main, publicInputSize);
+    return new KeypairBn254(keypair);
+    // })
+    // );
   }
 
   /**
