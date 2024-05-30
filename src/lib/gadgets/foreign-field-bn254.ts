@@ -5,7 +5,7 @@ import {
   inverse as modInverse,
   mod,
 } from '../../bindings/crypto/finite-field.ts';
-import { provableTuple } from '../../bindings/lib/provable-snarky.js';
+import { provableTuple } from '../../bindings/lib/provable-snarky.ts';
 import { BoolBn254 } from '../bool-bn254.ts';
 import { Unconstrained } from '../circuit-value-bn254.ts';
 import { FieldBn254 } from '../field-bn254.ts';

@@ -1,4 +1,4 @@
-import { provableFromClass } from '../../bindings/lib/provable-snarky.js';
+import { provableFromClass } from '../../bindings/lib/provable-snarky.ts';
 import type { ProvablePureExtended } from '../circuit-value.ts';
 import { assert } from '../gadgets/common.ts';
 import { chunkString } from '../util/arrays.ts';

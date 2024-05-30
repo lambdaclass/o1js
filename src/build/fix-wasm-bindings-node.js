@@ -7,7 +7,7 @@ let src = await fs.readFile(file, 'utf8');
 src = src.replace(
   "imports['env'] = require('env');",
   `
-let { isMainThread, workerData } = require('worker_threads');
+let { isMainThread, workerData } = require('npm:worker_threads');
 
 let env = {};
 if (isMainThread) {

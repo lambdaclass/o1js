@@ -1,4 +1,4 @@
-import { provableFromClass } from '../../bindings/lib/provable-snarky.js';
+import { provableFromClass } from '../../bindings/lib/provable-snarky.ts';
 import {
   HashInput,
   ProvableExtended,

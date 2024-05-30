@@ -1,4 +1,4 @@
-import './bindings/crypto/bindings.js';
+import './bindings/crypto/bindings.ts';
 import { getSnarky, getWasm, withThreadPool } from './bindings/js/wrapper.js';
 import snarkySpec from './bindings/js/snarky-class-spec.js';
 import { proxyClasses } from './bindings/js/proxy.js';

@@ -12,7 +12,7 @@ import {
   InferJson,
   InferProvable,
   InferredProvable,
-} from '../bindings/lib/provable-snarky.js';
+} from '../bindings/lib/provable-snarky.ts';
 import {
   inCheckedComputation,
   inProver,

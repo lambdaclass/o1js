@@ -2,7 +2,7 @@ import { Bool, Field } from '../core.ts';
 import { Provable } from '../provable.ts';
 import { Struct, Unconstrained } from '../circuit-value.ts';
 import { assert } from '../gadgets/common.ts';
-import { provableFromClass } from '../../bindings/lib/provable-snarky.js';
+import { provableFromClass } from '../../bindings/lib/provable-snarky.ts';
 import { Poseidon, packToFields, ProvableHashable } from '../hash.ts';
 
 export {

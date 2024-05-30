@@ -8,7 +8,7 @@ import { EllipticCurveBn254, PointBn254 } from './gadgets/elliptic-curve-bn254.t
 import { Field3 } from './gadgets/foreign-field-bn254.ts';
 import { assert } from './gadgets/common-bn254.ts';
 import { ProvableBn254 } from './provable-bn254.ts';
-import { provableFromClass } from '../bindings/lib/provable-snarky.js';
+import { provableFromClass } from '../bindings/lib/provable-snarky.ts';
 import { FieldConst, FieldVar } from './field-bn254.ts';
 import { ProvablePureExtendedBn254 } from './circuit-value-bn254.ts';
 

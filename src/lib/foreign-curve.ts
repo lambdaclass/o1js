@@ -10,7 +10,7 @@ import { EllipticCurve, Point } from './gadgets/elliptic-curve.ts';
 import { Field3 } from './gadgets/foreign-field.ts';
 import { assert } from './gadgets/common.ts';
 import { Provable } from './provable.ts';
-import { provableFromClass } from '../bindings/lib/provable-snarky.js';
+import { provableFromClass } from '../bindings/lib/provable-snarky.ts';
 import { FieldConst, FieldVar } from './field.ts';
 
 // external API
