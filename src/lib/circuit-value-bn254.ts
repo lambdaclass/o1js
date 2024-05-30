@@ -1,4 +1,4 @@
-import 'npm:reflect-metadata';
+import * from 'npm:reflect-metadata';
 import { ProvablePureBn254, Snarky } from '../snarky.js';
 import { FieldBn254, BoolBn254 } from './core-bn254.ts';
 import {
