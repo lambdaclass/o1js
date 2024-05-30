@@ -1,4 +1,4 @@
-import * from 'npm:reflect-metadata';
+import 'npm:reflect-metadata';
 import { ProvablePure, Snarky } from '../snarky.js';
 import { Field, Bool, Scalar, Group } from './core.ts';
 import {
